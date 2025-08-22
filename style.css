@@ -27,11 +27,11 @@ nav a {
 
 /* Applies to all sections */
 section {
-  min-height: 75vh;          /* make sections fill screen */
-  display: flex;              /* center content */
+  min-height: 75vh;          
+  display: flex;              
   align-items: center;
   justify-content: center;
-  scroll-margin-top: 80px;    /* offset for fixed nav */
+  scroll-margin-top: 80px;    
 }
 
 /* Home section styling */
@@ -57,11 +57,11 @@ section {
 }
 
 #work-title{
-flex: auto;
-  color: aliceblue;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: 30px;
+    flex: auto;
+    color: aliceblue;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
 }
 
 .icon {
@@ -71,10 +71,10 @@ flex: auto;
 }
 
 .socials {
-  display: flex;            /* activate flexbox */
-  justify-content: left;  /* center icons horizontally */
-  gap: 40px;                /* space between icons */
-  margin-top: 20px;         /* optional spacing from content */
+    display: flex;            /* activate flexbox */
+    justify-content: left;  /* center icons horizontally */
+    gap: 40px;                /* space between icons */
+    margin-top: 20px;         /* optional spacing from content */
 }
 
 #display-picture{
@@ -82,4 +82,69 @@ flex: auto;
     width: 150px;
 }
 
+/* Resume section */
+
+#resume{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    padding: 50px;
+}
+
+.page-tag{
+    flex: auto;
+    color: white;
+}
+
+.title-second{
+    flex: auto;
+    color: cadetblue;
+}
+
+#profile-text{
+    flex: auto;
+    color:blueviolet;
+    height: 150px;
+}
+
+/* skill bat */
+
+.skill {
+  margin: 20px 0;
+}
+
+.skill span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 200px;           
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: visible;      
+    position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+.skill-marker {
+  position: absolute;
+  top: -25px;            
+  display: block;          
+  transform: translateX(-50%); 
+  font-weight: bold;
+  background-color: white;
+  color: cyan;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
 
