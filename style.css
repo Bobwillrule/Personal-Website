@@ -1,26 +1,53 @@
-    body, html {
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth; /* makes jumps smooth */
-    }
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 
-    /* Navbar styling */
-    nav {
-      position: fixed;   /* stays at the top */
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #333;
-      color: white;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      z-index: 1000; /* stays above content */
-    }
+/* Navbar styling */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  z-index: 1000;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Applies to all sections */
+section {
+  min-height: 100vh;          /* make sections fill screen */
+  display: flex;              /* center content */
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 80px;    /* offset for fixed nav */
+}
+
+/* Home section styling */
+.home {
+  background-color: rgb(59, 84, 13);
+  padding: 50px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+#full-name {
+  flex: auto;
+  color: aliceblue;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 50px;
+}
