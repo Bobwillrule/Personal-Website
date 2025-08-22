@@ -1,0 +1,26 @@
+    body, html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth; /* makes jumps smooth */
+    }
+
+    /* Navbar styling */
+    nav {
+      position: fixed;   /* stays at the top */
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 1000; /* stays above content */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
