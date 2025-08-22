@@ -44,6 +44,10 @@ section {
   display: flex;
 }
 
+.left-text{
+    padding: 50px;
+}
+
 #full-name {
   flex: auto;
   color: aliceblue;
@@ -71,6 +75,11 @@ flex: auto;
   justify-content: left;  /* center icons horizontally */
   gap: 40px;                /* space between icons */
   margin-top: 20px;         /* optional spacing from content */
+}
+
+#display-picture{
+    flex: auto;
+    width: 150px;
 }
 
 
