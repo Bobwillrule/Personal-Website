@@ -73,7 +73,7 @@ section {
 
 .page-tag{
     flex: auto;
-    color: white;
+    color: rgb(57, 207, 122);
     font-size: 24px;
 }
 
@@ -96,6 +96,7 @@ section {
     display: flex;
     align-items: flex-start;
     gap: 50px;
+    justify-content: space-between; /* puts space between the blocks */
 }
 
 #skill-section{
@@ -112,6 +113,7 @@ section {
 
 .subtitle{
   color: white;
+  font-size: 35px;
 }
 
 .skilltext{
@@ -119,10 +121,20 @@ section {
   font-size: 20px;
 }
 
-/*footer*/
+/* CONTACT---------------------------------------------------------------------- */
+
+#contact{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(18, 17, 15);
+    padding: 50px;
+}
+
+/*footer-------------------------------------------------------------------------*/
 footer {
   display: flex;
-  background-color: #333;
+  background-color: #161616;
   color: white;
   text-align: center;
   position: relative; 
