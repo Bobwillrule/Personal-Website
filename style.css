@@ -114,6 +114,11 @@ section {
   color: white;
 }
 
+.skilltext{
+  color: rgb(136, 129, 121);
+  font-size: 20px;
+}
+
 /*footer*/
 footer {
   display: flex;
