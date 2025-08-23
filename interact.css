@@ -59,3 +59,19 @@ nav a {
   font-weight: bold;
 }
 
+/* resume button */
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1f2937; 
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #374151; 
+}
+
