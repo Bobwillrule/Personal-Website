@@ -74,17 +74,19 @@ section {
 .page-tag{
     flex: auto;
     color: white;
+    font-size: 24px;
 }
 
 .title-second{
     flex: auto;
-    color: cadetblue;
+    color: white;
+    font-size: 50px;
 }
 
 
 #profile-text{
     flex: auto;
-    color:blueviolet;
+    color: rgb(136, 129, 121);
     height: 150px;
 }
 
@@ -104,17 +106,35 @@ section {
     flex: auto;
 }
 
+.subtext{
+  color: rgb(136, 129, 121);
+}
+
+.subtitle{
+  color: white;
+}
+
 /*footer*/
 footer {
+  display: flex;
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 20px;
-  position: relative; /* or fixed if you want it always visible */
+  position: relative; 
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
 }
+
+.footer-text{
+  flex: auto;
+  color: rgb(136, 129, 121);
+  text-decoration: none; /* remove underline */
+}
+
+
 
 
 
