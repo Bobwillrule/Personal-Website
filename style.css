@@ -90,8 +90,18 @@ section {
 
 /* below the title, intro and tag */
 
-#skills-profile{
+#skill-profile{
     display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+#skill-section{
+    flex: auto;
+}
+
+#profile-section{
+    flex: auto;
 }
 
 
