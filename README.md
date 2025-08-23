@@ -4,7 +4,7 @@ This is my personal portfolio website, built with **HTML, CSS, and JavaScript**.
 It showcases my background, projects, resume, and work experience.  
 
 ## 🌐 Live Site
-[View Website](https://bobwillrule.github.io/personal-website)
+[View Website](https://bobwillrule.github.io/Personal-Website)
 
 ## 📂 Features
 - **About/Resume Section** – introduction and resume button  
