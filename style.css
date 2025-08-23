@@ -4,27 +4,6 @@ body, html {
   scroll-behavior: smooth;
 }
 
-/* Navbar styling */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #333;
-  color: white;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  z-index: 1000;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 /* Applies to all sections */
 section {
   min-height: 75vh;          
@@ -102,9 +81,18 @@ section {
     color: cadetblue;
 }
 
+
 #profile-text{
     flex: auto;
     color:blueviolet;
     height: 150px;
 }
+
+/* below the title, intro and tag */
+
+#skills-profile{
+    display: flex;
+}
+
+
 
