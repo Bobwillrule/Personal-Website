@@ -131,6 +131,19 @@ section {
     padding: 50px;
 }
 
+#contact-bar{
+    display: flex;  
+}
+
+.contact-title{
+    flex: auto;
+    color: rgb(57, 207, 122);
+}
+
+.contact-text{
+    color: rgb(136, 129, 121);
+}
+
 /*footer-------------------------------------------------------------------------*/
 footer {
   display: flex;
