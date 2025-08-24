@@ -5,8 +5,7 @@ body, html {
 }
 
 /* Applies to all sections */
-section {
-  min-height: 75vh;          
+section {         
   display: flex;              
   align-items: center;
   justify-content: center;
@@ -129,19 +128,45 @@ section {
     justify-content: center;
     background-color: rgb(18, 17, 15);
     padding: 50px;
+    height: 500px;
 }
 
 #contact-bar{
     display: flex;  
+    gap: 50px;
+}
+
+.contact-cat{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: auto;
+  align-items: center;
+  width: 200px;       /* pick a width big enough for the longest text */
+  text-align: center; /* center the text inside */
+  margin: 0;   /* remove browser’s default extra spacing */
+  line-height: 1.2;
+  gap: 6px;
+
 }
 
 .contact-title{
     flex: auto;
     color: rgb(57, 207, 122);
+    font-size: 25px;
 }
 
 .contact-text{
     color: rgb(136, 129, 121);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.contact-images{
+  flex: auto;
+  width: 80px;
+  height: 80px;
+  object-fit: contain; 
 }
 
 /*footer-------------------------------------------------------------------------*/
