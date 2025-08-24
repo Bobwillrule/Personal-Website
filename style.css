@@ -129,11 +129,14 @@ section {
     background-color: rgb(18, 17, 15);
     padding: 50px;
     height: 500px;
+    gap:5px;
 }
 
 #contact-bar{
     display: flex;  
     gap: 50px;
+    padding-top: 100px;
+    margin-top: 0;  
 }
 
 .contact-cat{
