@@ -119,6 +119,56 @@ section {
   color: rgb(136, 129, 121);
   font-size: 20px;
 }
+/* projects */
+
+#projects{
+  text-align: center;
+  align-items: center;
+}
+
+.project-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex: auto;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+#project-horizontal{
+  display: flex;
+  gap: 20px;
+}
+
 
 /* CONTACT---------------------------------------------------------------------- */
 
@@ -145,9 +195,9 @@ section {
   justify-content: center;
   flex: auto;
   align-items: center;
-  width: 200px;       /* pick a width big enough for the longest text */
-  text-align: center; /* center the text inside */
-  margin: 0;   /* remove browser’s default extra spacing */
+  width: 200px;       
+  text-align: center; 
+  margin: 0;   
   line-height: 1.2;
   gap: 6px;
 
