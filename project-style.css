@@ -1,0 +1,37 @@
+/* Simple row layout for projects */
+.project-row {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.project-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.project-row h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.project-row p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
