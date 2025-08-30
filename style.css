@@ -157,6 +157,12 @@ section {
 
 /* CONTACT---------------------------------------------------------------------- */
 
+.title-third{
+    flex: auto;
+    color: black;
+    font-size: 50px;
+}
+
 #contact{
     display: flex;  
     flex-direction: column;
