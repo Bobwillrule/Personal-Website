@@ -124,28 +124,9 @@ section {
 #projects{
   text-align: center;
   align-items: center;
-}
-
-.project-card {
-  width: 300px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  flex: auto;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-.project-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .project-content {
@@ -164,9 +145,13 @@ section {
   margin: 10px 0;
 }
 
-#project-horizontal{
-  display: flex;
-  gap: 20px;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px; 
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px; 
 }
 
 
@@ -240,6 +225,10 @@ footer {
   flex: auto;
   color: rgb(136, 129, 121);
   text-decoration: none; /* remove underline */
+}
+
+a {
+  text-decoration: none;
 }
 
 
