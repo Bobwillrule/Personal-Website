@@ -127,8 +127,8 @@ nav a {
   }
 
   .book {
-    width: 120px;   /* bigger */
-    height: 360px;  /* taller */
+    width: 120px;   
+    height: 360px; 
     background: linear-gradient(160deg, #5d4037, #3e2723);
     color: #f4e1c6;
     display: flex;
