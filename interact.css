@@ -203,3 +203,14 @@ nav a {
       width: 260px;
     }
   }
+
+/* For expereinces divider */
+#divider {
+    width: 5px;           
+    background-color: #8f1111;
+    height: 400px;
+    border-radius: 3px;
+    overflow: visible;      
+    position: relative;
+    flex: 0, 0, auto;
+}
