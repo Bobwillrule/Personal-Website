@@ -205,10 +205,10 @@ nav a {
   }
 
 /* For expereinces divider */
-#divider {
+.divider {
     width: 5px;           
     background-color: #8f1111;
-    height: 400px;
+    height: 10px;
     border-radius: 3px;
     overflow: visible;      
     position: relative;

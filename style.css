@@ -130,23 +130,24 @@ section {
 #experience .title-second{
     color: #161616;
 }
-#left{
-    flex:auto;
+.left{
     width: 50px;
     padding: 20px;
 }
-#right{
-    flex:auto;
+.right{
     width: 200px;
     padding: 20px;
 }
 
-#job-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex:auto;
+#job-container {
+  display: grid;
+  grid-template-columns: 1fr 2px 2fr; /* left | divider | right */
+  gap: 20px; /* horizontal spacing */
+  align-items: start;
+}
+
+.job-title, .company {
+  padding: 10px 0;
 }
 /* ---------------projects--------------- */
 
