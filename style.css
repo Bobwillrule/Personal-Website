@@ -14,19 +14,19 @@ section {
 
 .page-tag{
     flex: auto;
-    color: rgb(57, 207, 122);
+    color: #80ed99;
     font-size: 24px;
 }
 
 .title-second{
     flex: auto;
-    color: white;
+    color: #22577a;
     font-size: 50px;
 }
 
 /* Home section styling */
 .home {
-  background-color: rgb(59, 84, 13);
+  background-color: #c7f9cc;
   padding: 50px;
 }
 
@@ -40,7 +40,7 @@ section {
 
 #full-name {
   flex: auto;
-  color: aliceblue;
+  color: #38a3a5;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 100px;
@@ -48,7 +48,7 @@ section {
 
 #work-title{
     flex: auto;
-    color: aliceblue;
+    color: #38a3a5;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 30px;
