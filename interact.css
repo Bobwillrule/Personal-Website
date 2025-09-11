@@ -51,6 +51,7 @@ nav {
   gap: 2rem;
   padding: 1rem;
   z-index: 1000;
+  height: 25px;
 }
 
 nav a {
@@ -213,4 +214,21 @@ nav a {
     overflow: visible;      
     position: relative;
     flex: 0, 0, auto;
+}
+
+/* Global messages */
+#global {
+  position: fixed; 
+  top: 60px; 
+  left: 0;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.85); 
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.2rem 1rem; 
+  z-index: 999; 
+  height: auto; 
+  font-size: 0.9rem;
 }
