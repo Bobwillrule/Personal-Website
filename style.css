@@ -124,30 +124,40 @@ section {
 #experience{
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 1000px;
 }
 
 #experience .title-second{
     color: #161616;
 }
 .left{
-    width: 150px;
+    width: 100%;
     padding: 20px;
 }
 .right{
-    width: 300px;
+    width: 100%;
     padding: 20px;
 }
 
 #job-container {
   display: grid;
-  grid-template-columns: 1fr 2px 2fr; /* left | divider | right */
+  grid-template-columns: 2fr 2px 3fr; /* left | divider | right */
   gap: 20px; /* horizontal spacing */
   align-items: start;
+  padding: 0 200px 0 200px;
+  margin: 0 100px 0 100px;
 }
 
 .job-title, .company {
   padding: 10px 0;
+}
+
+.job-title{
+    font-size: 1.8rem;
+}
+
+.company{
+    font-size: 1.6rem;
 }
 /* ---------------projects--------------- */
 
