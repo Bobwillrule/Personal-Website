@@ -1,8 +1,31 @@
-body, html {
-  margin: 0;
-  padding: 0;
+html {
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #faf8f5;
+  color: #222;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 100px 10%;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
 
 /* Applies to all sections */
 section {         
@@ -12,7 +35,26 @@ section {
   scroll-margin-top: 80px;    
 }
 
-.page-tag{
+.page-tag {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #a4a4a4;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+/* Large title (like “My Academic Journey”) */
+.title-second,
+.title-third {
+  margin: 0;
+  font-size: 3.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #1e293b;
+}
+
+/*.page-tag{
     flex: auto;
     color: #80ed99;
     font-size: 24px;
@@ -22,7 +64,7 @@ section {
     flex: auto;
     color: #22577a;
     font-size: 50px;
-}
+}*/
 
 /* Home section styling */
 .home {
@@ -61,10 +103,10 @@ section {
 }
 
 .socials {
-    display: flex;            /* activate flexbox */
+    display: flex;          
     justify-content: left;  /* center icons horizontally */
-    gap: 40px;                /* space between icons */
-    margin-top: 20px;         /* optional spacing from content */
+    gap: 40px;               
+    margin-top: 20px;     
 }
 
 #display-picture{
@@ -85,6 +127,7 @@ section {
 
 #profile-text{
     flex: auto;
+    width: 25rem;
     color: rgb(136, 129, 121);
     height: 150px;
 }
