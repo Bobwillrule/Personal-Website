@@ -185,7 +185,7 @@ section {
 
 #job-container {
   display: grid;
-  grid-template-columns: 2fr 2px 3fr; /* left | divider | right */
+  grid-template-columns: 3fr 2px 5fr; /* left | divider | right */
   gap: 20px; /* horizontal spacing */
   align-items: start;
   padding: 0 200px 0 200px;
