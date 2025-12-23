@@ -68,7 +68,7 @@ section {
 
 /* Home section styling */
 .home {
-  background-color: #c7f9cc;
+  background-color: #F0F0F0;
   padding: 50px;
 }
 
@@ -82,7 +82,7 @@ section {
 
 #full-name {
   flex: auto;
-  color: #38a3a5;
+  color: #96A78D;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 100px;
@@ -90,7 +90,7 @@ section {
 
 #work-title{
     flex: auto;
-    color: #38a3a5;
+    color: #B6CEB4;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 30px;
@@ -120,7 +120,7 @@ section {
     display: flex;  
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(18, 17, 15);
+    background-color: #96A78D;
     padding: 50px;
 }
 
@@ -173,7 +173,7 @@ section {
 }
 
 #experience .title-second{
-    color: #57529c;
+    color: #5d529c;
 }
 .left{
     width: 100%;
