@@ -114,7 +114,7 @@ body {
 
 #education {
     text-align: center;
-    padding: 50px 20px;
+    padding: 1rem 10rem;
     background: #a18661;
 }
 
@@ -122,15 +122,14 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 60px; /* more spacing for bigger books */
-    padding: 40px;
+    gap: 1rem; 
+    padding: 1rem;
     background: #d4b996;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     border: 5px solid #8d6e63;
     max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 3rem;
 }
 
 .book {
