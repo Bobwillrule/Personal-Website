@@ -38,7 +38,7 @@ section {
 .page-tag {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #a4a4a4;
+  color: #c7f9cc;
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
@@ -70,7 +70,7 @@ section {
 #home {
   background: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("./Images/UBC.jpg");
+    url("./Images/whistler.jpg");
   background-size: cover;
   padding: 50px;
 }
@@ -85,7 +85,7 @@ section {
 
 #full-name {
   flex: auto;
-  color: #96A78D;
+  color: #b5c8b4;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 100px;
@@ -131,7 +131,7 @@ section {
 #profile-text{
     flex: auto;
     width: 25rem;
-    color: rgb(136, 129, 121);
+    color: rgb(93, 96, 91);
     height: 150px;
 }
 
