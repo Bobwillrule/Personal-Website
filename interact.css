@@ -121,7 +121,7 @@ body {
 .bookshelf {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1rem; 
     padding: 1rem;
     background: #d4b996;
