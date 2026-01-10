@@ -198,18 +198,6 @@ body {
 }
 
 
-
-@media (max-width: 768px) {
-.book {
-    width: 90px;
-    height: 280px;
-    font-size: 13px;
-}
-.book-details {
-    width: 260px;
-}
-}
-
 /* For expereinces divider */
 .divider {
     width: 0.3rem;           
