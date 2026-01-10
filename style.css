@@ -218,7 +218,7 @@ section {
   justify-content: center;
   flex-direction: column;
   background: #a18661;
-  height: 45rem;
+  height: 41rem;
 }
 
 .project-content {
@@ -250,27 +250,20 @@ section {
 
 /* ------------------------------------------CONTACT---------------------------------------------------------------------- */
 
-.title-third{
-    flex: auto;
-    color: black;
-    font-size: 50px;
-}
 
 #contact{
     display: flex;  
     flex-direction: column;
     justify-content: center;
     background-color: #96A78D;
-    padding: 50px;
-    height: 450px;
-    gap:5px;
+    height: 15rem;
 }
 
 #contact-bar{
     display: flex;  
     gap: 50px;
-    padding-top: 100px;
-    margin-top: 0;  
+    padding-top: 2.5rem;
+    margin-bottom: 2rem;  
 }
 
 .contact-cat{
@@ -283,13 +276,13 @@ section {
   text-align: center; 
   margin: 0;   
   line-height: 1.2;
-  gap: 6px;
+  gap: 0.1rem;
 
 }
 
 .contact-title{
     flex: auto;
-    color: rgb(57, 207, 122);
+    color: #1e293b;
     font-size: 25px;
 }
 
