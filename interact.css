@@ -197,6 +197,39 @@ body {
     font-size: 15px;
 }
 
+@media (max-width: 768px) {
+
+  #education {
+    padding: 1rem 1rem;   /* remove the huge 10rem padding */
+  }
+
+  .bookshelf {
+    margin-left: 0;
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+
+  .book {
+    width: 4.5rem;
+    height: 14rem;
+    padding: 0.5rem;
+  }
+
+  .spine-text {
+    font-size: 10px;
+  }
+}
+
+/* @media (max-width: 768px) {
+.book {
+    width: 90px;
+    height: 280px;
+    font-size: 13px;
+}
+.book-details {
+    width: 260px;
+}
+} */
 
 /* For expereinces divider */
 .divider {
