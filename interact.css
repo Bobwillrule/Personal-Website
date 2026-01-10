@@ -133,8 +133,8 @@ body {
 }
 
 .book {
-    width: 120px;   
-    height: 360px; 
+    width: 7rem;   
+    height: 22rem; 
     background: linear-gradient(160deg, #5d4037, #3e2723);
     color: #f4e1c6;
     display: flex;
@@ -142,12 +142,12 @@ body {
     justify-content: center;
     font-family: "Georgia", serif;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 1rem;
     cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     position: relative;
     box-shadow: inset 0 0 6px rgba(255,255,255,0.3), 0 6px 12px rgba(0,0,0,0.3);
-    padding: 10px;
+    padding: 1rem;
 }
 
 .book:hover {
@@ -214,7 +214,7 @@ body {
 .divider {
     width: 0.3rem;           
     background-color: #1e293b;
-    height: 8rem;
+    height: 6rem;
     border-radius: 3px;
     overflow: visible;      
     position: relative;

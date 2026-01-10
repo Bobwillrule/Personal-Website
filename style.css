@@ -171,7 +171,7 @@ section {
 #experience{
     display: flex;
     flex-direction: column;
-    height: 42rem;
+    height: 40rem;
     background-color: #96A78D;
 }
 
@@ -194,7 +194,7 @@ section {
   grid-template-columns: 3fr 2px 5fr; /* left | divider | right */
   column-gap: 20px;
   align-items: start;
-  padding: 0 7rem 0 7rem;
+  padding: 0 3.5rem 0 3.5rem;
   margin: 3rem 4rem 0 4rem;
 }
 
