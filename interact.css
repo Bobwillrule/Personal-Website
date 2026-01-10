@@ -40,11 +40,11 @@
 
 /* Navbar styling */
 nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background: #22577a;
+  background: transparent;
   color: rgb(59, 58, 38);
   display: flex;
   justify-content: center;
@@ -58,6 +58,12 @@ nav a {
   color: #c7f9cc;
   text-decoration: none;
   font-weight: bold;
+}
+
+nav.scrolled {
+  background: rgba(34, 87, 122, 0.95);
+  backdrop-filter: blur(8px);           
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* resume button */
@@ -102,17 +108,17 @@ nav a {
 
 /* EDUCATION */
 
-  body {
+body {
     overflow-x: hidden; 
-  }
+}
 
-  #education {
+#education {
     text-align: center;
     padding: 50px 20px;
     background: #f4f0ea;
-  }
+}
 
-  .bookshelf {
+.bookshelf {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -125,9 +131,9 @@ nav a {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .book {
+.book {
     width: 120px;   
     height: 360px; 
     background: linear-gradient(160deg, #5d4037, #3e2723);
@@ -143,20 +149,20 @@ nav a {
     position: relative;
     box-shadow: inset 0 0 6px rgba(255,255,255,0.3), 0 6px 12px rgba(0,0,0,0.3);
     padding: 10px;
-  }
+}
 
-  .book:hover {
+.book:hover {
     transform: translateY(-25px) rotate(-2deg);
     box-shadow: 0 14px 22px rgba(0,0,0,0.45);
-  }
+}
 
-  /* Spine text vertical */
-  .spine-text {
+/* Spine text vertical */
+.spine-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-size: 16px;
     text-align: center;
-  }
+}
 
 
  .book-details {
@@ -181,29 +187,29 @@ nav a {
   transform: translateX(0);
 }
 
-  .book-details h3 {
+.book-details h3 {
     margin-top: 0;
     font-size: 20px;
     text-align: center;
-  }
+}
 
-  .book-details p {
+.book-details p {
     margin: 8px 0;
     font-size: 15px;
-  }
+}
 
 
 
- @media (max-width: 768px) {
-    .book {
-      width: 90px;
-      height: 280px;
-      font-size: 13px;
-    }
-    .book-details {
-      width: 260px;
-    }
-  }
+@media (max-width: 768px) {
+.book {
+    width: 90px;
+    height: 280px;
+    font-size: 13px;
+}
+.book-details {
+    width: 260px;
+}
+}
 
 /* For expereinces divider */
 .divider {
