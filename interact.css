@@ -85,7 +85,7 @@ nav.scrolled {
 /* Project */
 
 .project-card {
-  width: 300px;
+  width: 17rem;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -101,7 +101,7 @@ nav.scrolled {
 
 .project-image {
   width: 100%;
-  height: 180px;
+  height: 7rem;
   object-fit: cover;
 }
 

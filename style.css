@@ -218,6 +218,7 @@ section {
   justify-content: center;
   flex-direction: column;
   background: #a18661;
+  height: 45rem;
 }
 
 .project-content {
@@ -239,9 +240,10 @@ section {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 30px; 
-  margin-top: 2rem;
-  width: 100%;
+  gap: 1.5rem; 
+  margin: 3rem 15rem;
+  padding: 0, 20rem;
+  width: 80%;
   max-width: 1200px; 
 }
 
