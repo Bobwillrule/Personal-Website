@@ -115,7 +115,7 @@ body {
 #education {
     text-align: center;
     padding: 50px 20px;
-    background: #f4f0ea;
+    background: #a18661;
 }
 
 .bookshelf {
@@ -213,13 +213,14 @@ body {
 
 /* For expereinces divider */
 .divider {
-    width: 5px;           
-    background-color: #FFD700;
-    height: 200px;
+    width: 0.3rem;           
+    background-color: #1e293b;
+    height: 8rem;
     border-radius: 3px;
     overflow: visible;      
     position: relative;
     flex: 0, 0, auto;
+    margin-top: 3rem;
 }
 
 /* Global messages */

@@ -153,7 +153,7 @@ section {
 }
 
 .subtext{
-  color: rgb(136, 129, 121);
+  color: rgb(93, 96, 91);
   font-size: 1.5rem;
 }
 
@@ -163,7 +163,7 @@ section {
 }
 
 .skilltext{
-  color: rgb(136, 129, 121);
+  color: rgb(93, 94, 92);
   font-size: 1rem;
 }
 
@@ -171,31 +171,31 @@ section {
 #experience{
     display: flex;
     flex-direction: column;
-    height: 950px;
-    background-color: rgb(18, 17, 15);
+    height: 42rem;
+    background-color: #96A78D;
 }
 
 #experience .title-second{
-    color: #5d529c;
+    color: #1e293b;
 }
 .left{
     width: 100%;
-    padding: 20px;
-    color: rgb(136, 129, 121);
+    padding-right: 2rem;
+    color: rgb(93, 96, 91);
 }
 .right{
     width: 100%;
-    padding: 20px;
-    color: rgb(136, 129, 121);
+    padding-left: 2rem;
+    color: rgb(93, 96, 91);
 }
 
 #job-container {
   display: grid;
   grid-template-columns: 3fr 2px 5fr; /* left | divider | right */
-  gap: 20px; /* horizontal spacing */
+  column-gap: 20px;
   align-items: start;
-  padding: 0 30px 0 30px;
-  margin: 0 10px 0 10px;
+  padding: 0 7rem 0 7rem;
+  margin: 3rem 4rem 0 4rem;
 }
 
 .job-title, .company {
@@ -217,7 +217,7 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #f4f0ea;
+  background: #a18661;
 }
 
 .project-content {
@@ -258,7 +258,7 @@ section {
     display: flex;  
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(18, 17, 15);
+    background-color: #96A78D;
     padding: 50px;
     height: 450px;
     gap:5px;
@@ -313,7 +313,7 @@ footer {
   position: relative; 
   bottom: 0;
   width: 100%;
-  height: 80px;
+  height: 4rem;
   justify-content: center;
   align-items: center;
 }
