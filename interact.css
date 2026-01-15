@@ -85,13 +85,15 @@ nav.scrolled {
 /* Project */
 
 .project-card {
-  width: 17rem;
+  width: 100%;              
+  max-width: 350px;         
+  margin: 0 auto;           
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 18rem;
 }
 
 .project-card:hover {
