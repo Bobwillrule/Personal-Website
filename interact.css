@@ -184,6 +184,7 @@ body {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(0);
+  color:#1e293b;
 }
 
 .book-details h3 {
