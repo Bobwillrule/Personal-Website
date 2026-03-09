@@ -1,16 +1,20 @@
-/* skill bar */
+/* =========================================================
+    General File for elements in the website that are finer
+    ie buttons, bars, dividers
+   ========================================================= */
 
-.skill {
+/* ----skill bar ---- */
+.skill { /* container for each skill entry */
   margin: 20px 0;
 }
 
-.skill span {
+.skill span { /* skill name text above the bar */
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
 }
 
-.skill-bar {
+.skill-bar { /* background bar of the skill bar */
     width: 400px;           
     background-color: #ddd;
     height: 10px;
@@ -19,13 +23,13 @@
     position: relative;
 }
 
-.skill-fill {
+.skill-fill { /* filled portion of bar */
   height: 100%;
   background-color: #bbc4bc;
   border-radius: 3px;
 }
 
-.skill-marker {
+.skill-marker { /* arrow on top of bar where fill ends */
   position: absolute;
   top: -25px;            
   display: block;          
@@ -38,8 +42,8 @@
   font-size: 12px;
 }
 
-/* Navbar styling */
-nav {
+/* ------- Navbar styling ------------ */
+nav { /* Main navigation bar */
   position: fixed;
   top: 0;
   left: 0;
@@ -54,20 +58,20 @@ nav {
   height: 25px;
 }
 
-nav a {
+nav a { /* Navigation links */
   color: #c7f9cc;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav.scrolled {
+nav.scrolled {  /* change color when scrolled down */
   background: #1e293b;
   backdrop-filter: blur(8px);           
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* resume button */
-.resume-button {
+.resume-button { /* resume button in resume section */
   display: inline-block;
   padding: 25px 60px;
   background-color: #1f2937; 
@@ -78,13 +82,13 @@ nav.scrolled {
   transition: background-color 0.3s ease;
 }
 
-.resume-button:hover {
+.resume-button:hover { /* change color when hovered */
   background-color: #374151; 
 }
 
 /* Project */
 
-.project-card {
+.project-card { /* Individual project card container */
   width: 100%;              
   max-width: 350px;         
   margin: 0 auto;           
@@ -96,31 +100,31 @@ nav.scrolled {
   max-width: 18rem;
 }
 
-.project-card:hover {
+.project-card:hover { /* change when cursor hover on card */
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
-.project-image {
+.project-image { /* styling for image of card */
   width: 100%;
   height: 7rem;
   object-fit: cover;
 }
 
 
-/* EDUCATION */
-
-body {
+/*------------ EDUCATION  ---------*/
+ 
+body { /* prevent horizontal scrolling on the page */
     overflow-x: hidden; 
 }
 
-#education {
+#education { /* education section container */
     text-align: center;
     padding: 1rem 10rem;
     background: #a18661;
 }
 
-.bookshelf {
+.bookshelf { /* container for the book-style education cards (big square in back) */
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
@@ -134,7 +138,7 @@ body {
     margin-left: 3rem;
 }
 
-.book {
+.book { /* individual books in the shelf*/
     width: 7rem;   
     height: 22rem; 
     background: linear-gradient(160deg, #5d4037, #3e2723);
@@ -152,7 +156,7 @@ body {
     padding: 1rem;
 }
 
-.book:hover {
+.book:hover { /* hover animation for books */
     transform: translateY(-25px) rotate(-2deg);
     box-shadow: 0 14px 22px rgba(0,0,0,0.45);
 }
@@ -166,7 +170,7 @@ body {
 }
 
 
- .book-details {
+ .book-details { /* style for page when hover over page */
   position: absolute;
   top: 0;
   right: 100%; 
@@ -182,36 +186,26 @@ body {
   transform: translateX(-20px); 
 }
 
-.book:hover .book-details {
+.book:hover .book-details { /* reveal detail when hovered */
   opacity: 1;
   pointer-events: auto;
   transform: translateX(0);
   color:#1e293b;
 }
 
-.book-details h3 {
+.book-details h3 { /* title style when open details */
     margin-top: 0;
     font-size: 20px;
     text-align: center;
 }
 
-.book-details p {
+.book-details p { /* paragraph details*/
     margin: 8px 0;
     font-size: 15px;
 }
-/* @media (max-width: 768px) {
-.book {
-    width: 90px;
-    height: 280px;
-    font-size: 13px;
-}
-.book-details {
-    width: 260px;
-}
-} */
 
-/* For expereinces divider */
-.divider {
+/* ----------- For expereinces divider --------- */
+.divider { /* a vertical line between left and right of work experience*/
     width: 0.3rem;           
     background-color: #1e293b;
     height: 6rem;
@@ -223,7 +217,7 @@ body {
 }
 
 /* Global messages */
-#global {
+#global { /* style for global messages banner at top */
   position: fixed; 
   top: 60px; 
   left: 0;

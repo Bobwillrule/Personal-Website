@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="interact.css">
 </head>
 <body>
-    <nav>
+    <!--Navigation bar-->
+    <nav> 
         <a href="#home">Home</a>
         <a href="#resume">Resume</a>
         <a href="#education">Education</a>
@@ -17,10 +18,11 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <div id="global">
+    <div id="global"> <!--global message-->
         <p> Hi visitor! This site is still under construction, but feel free to look around!</p>
     </div>
 
+    <!---------------------HOME PAGE---------------------------------------->
     <section id = "home" class="flex-container">
         <div class="left-text">
             <h1 id="full-name">Hugo Chen</h1>
@@ -41,7 +43,8 @@
         <img id="display-picture" src="./Images/Hugo.jpg" alt="Personal Image" width: 50px>
 
     </section>
-    <section id="resume">
+    <!-- -------------------- Resume section--------------------------------->
+    <section id="resume"> 
         <h3 class="page-tag">About</h3>
         <h2 class="title-second">Who is this guy?</h2>
         <div id="skill-profile"> 
@@ -128,12 +131,12 @@
     <div class="bookshelf">
         <!-- Book 1 -->
         <div class="book" onclick="toggleDetails(this)">
-        <span class="spine-text">
+        <span class="spine-text"> <!-- Book 1 cover -->
             BSc. Computer Science<br>
             University of British Columbia<br>
             2025 – 2028
         </span>
-        <div class="book-details">
+        <div class="book-details"> <!-- Book 1 when opened -->
             <h3>Bachelor of Computer Science</h3>
             <p>University of British Columbia</p>
             <p><strong>Years:</strong> 2025 – 2028</p>
@@ -145,13 +148,13 @@
 
         <!-- Book 2 -->
         <div class="book" onclick="toggleDetails(this)">
-        <span class="spine-text">
+        <span class="spine-text"> <!-- Book 2 cover -->
             Concurrent studies student<br>
             Simon Fraser University<br>
             2023 – 2025
         </span>
-        <div class="book-details">
-            <h3>Concurrent Studies</h3>
+        <div class="book-details"> <!-- Book 2 when opened -->
+            <h3>Concurrent Studies</h3> 
             <p>Simon Fraser University</p>
             <p><strong>Years:</strong> 2022 - 2024</p>
             <p>Selected for admission into SFU’s <em>Concurrent Studies</em> program, which allows top secondary students (90%+ standing) to take university-level courses before graduation.</p>
@@ -162,13 +165,13 @@
 
         <!-- Book 3 -->
         <div class="book" onclick="toggleDetails(this)">
-        <span class="spine-text">
+        <span class="spine-text"> <!-- Book 3 cover -->
             Dogwood Diploma<br>
             Centennial Secondary School<br>
             2021-2025
         </span>
-        <div class="book-details">
-            <h3>Highschool Diploma</h3>
+        <div class="book-details"> <!-- Book 2 when opened -->
+            <h3>Highschool Diploma</h3> 
             <p>Centennial Secondary School</p>
             <p><strong>Year:</strong> 2021-205</p>
             <p><strong>Average:</strong> 94/100</p>
@@ -184,11 +187,11 @@
     <div id="job-container">
         <!--------card 1---------->
         <div class="left">
-            <div class="job-title">Framer</div>
+            <div class="job-title">Framer</div> <!--left of the divider with title and date-->
             <p>Jun. 2023 -- Oct. 2024</p>
         </div>
-        <div class="divider"></div>
-        <div class="right">
+        <div class="divider"></div> <!--divider divides the left and right-->
+        <div class="right"> <!--right of the divider with description-->
             <div class="company">Linty Construction</div>
             <ul>
                 <li>Framed 4 custom residential homes, including an energy-efficient Step Code 5 project</li>
@@ -228,10 +231,11 @@
 
     <!----------------------------------Projects------------------------------------------------------>
     <section id="projects">
-    <h3 class="page-tag">Projects</h3>
+    <h3 class="page-tag">Projects</h3> 
     <h2 class="title-third">See my creations!</h2>
     <div class="projects-grid">
-        <a href="./PDF/Project Portfolio.pdf" class="project-card">
+         <!--------card 1---------->
+        <a href="./PDF/Project Portfolio.pdf" class="project-card"> 
         <img src="./Images/table.png" alt="Project Screenshot" class="project-image">
         <div class="project-content">
             <h3 class="project-title">Four-way coffee table</h3>
@@ -241,6 +245,7 @@
         </div>
         </a>
 
+         <!--------card 2---------->
         <a href="https://github.com/Bobwillrule/Personal-Website" class="project-card">
         <img src="./Images/website.png" alt="Project Screenshot" class="project-image">
         <div class="project-content">
@@ -251,6 +256,7 @@
         </div>
         </a>
 
+         <!--------card 3---------->
         <a href="https://github.com/Bobwillrule/Unit-Calculator" class="project-card">
         <img src="./Images/calculator.png" alt="calculator-picture" class="project-image">
         <div class="project-content">
@@ -261,6 +267,7 @@
         </div>
         </a>
 
+         <!--------card 4---------->
         <a href="https://github.com/Bobwillrule/bot" class="project-card">
         <img src="./Images/bot.png" alt="Project Screenshot" class="project-image">
         <div class="project-content">
@@ -271,6 +278,7 @@
         </div>
         </a>
 
+         <!--------card 5---------->
         <a href="https://github.com/Bobwillrule/Financial-Tracker" class="project-card">
         <img src="./Images/tracker.png" alt="financial-tracker" class="project-image">
         <div class="project-content">
@@ -280,6 +288,7 @@
         </div>
         </a>
 
+         <!--------card 6---------->
         <a href="#" class="project-card">
         <img src="./Images/game.png" alt="game" class="project-image">
         <div class="project-content">
@@ -296,7 +305,7 @@
         <h3 class="page-tag">Contact</h3>
         <h2 class="title-second">I would love to connect with you</h2>
         <div id="contact-bar">
-            <div class="contact-cat">
+            <div class="contact-cat"><!--Icons with text/link underneath-->
                 <img src="./Images/email.png" alt="Email" class="contact-images">
                 <h3 class="contact-title">Email Me At</h3>
                 <a href="mailto:hugohqchen@gmail.com" class="contact-text"><strong>hugohqchen@gmail.com</strong></a>

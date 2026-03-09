@@ -1,8 +1,13 @@
-html {
+/* =========================================================
+   GLOBAL PAGE STYLES
+   General typography, spacing, and base layout rules
+   ========================================================= */
+
+html { /* enable smooth scrolling*/
   scroll-behavior: smooth;
 }
 
-body {
+body { /* main body styling */
   font-family: "Poppins", "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
@@ -11,31 +16,31 @@ body {
   overflow-x: hidden;
 }
 
-section {
+section { /* default section layout  */
   padding: 100px 10%;
   margin: 0 auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3 { /*global heading style */
   font-weight: 700;
   color: #1f2937;
 }
 
-p {
+p { /* Default paragraph styling */
   line-height: 1.6;
   margin: 0.5rem 0;
 }
 
 
 /* Applies to all sections */
-section {         
+section { /* Center section contents using flexbox */   
   display: flex;              
   align-items: center;
   justify-content: center;
   scroll-margin-top: 80px;    
 }
 
-.page-tag {
+.page-tag { /* style for page tags under each section */
   font-size: 1.6rem;
   font-weight: 600;
   color: #c7f9cc;
@@ -54,17 +59,6 @@ section {
   color: #1e293b;
 }
 
-/*.page-tag{
-    flex: auto;
-    color: #80ed99;
-    font-size: 24px;
-}
-
-.title-second{
-    flex: auto;
-    color: #22577a;
-    font-size: 50px;
-}*/
 
 /* Home section styling */
 #home {
@@ -75,15 +69,15 @@ section {
   padding: 50px;
 }
 
-.flex-container {
+.flex-container { /* make html a flexbox */
   display: flex;
 }
 
-.left-text{
+.left-text{ /* container for homescreen text */
     padding: 50px;
 }
 
-#full-name {
+#full-name { /* style for name on home screen */
   flex: auto;
   color: #b5c8b4;
   padding-left: 30px;
@@ -91,7 +85,7 @@ section {
   font-size: 100px;
 }
 
-#work-title{
+#work-title{ /* title under name*/
     flex: auto;
     color: #B6CEB4;
     padding-left: 30px;
@@ -99,27 +93,27 @@ section {
     font-size: 30px;
 }
 
-.icon {
+.icon { /* social icons */
     flex: auto;
     width:24px; 
     padding: 40px;
 }
 
-.socials {
+.socials {/* social icons container*/
     display: flex;          
     justify-content: left;  /* center icons horizontally */
     gap: 40px;               
     margin-top: 20px;     
 }
 
-#display-picture{
+#display-picture{ /* profile picture */
     flex: auto;
     width: 150px;
 }
 
 /*------------------ Resume section--------------------- */
 
-#resume{
+#resume{ /* general resume section containter */
     display: flex;  
     flex-direction: column;
     justify-content: center;
@@ -128,68 +122,67 @@ section {
 }
 
 
-#profile-text{
+#profile-text{ /* blurb text intro container */
     flex: auto;
     width: 25rem;
     color: rgb(93, 96, 91);
     height: 150px;
 }
 
-/* below the title, intro and tag */
-
-#skill-profile{
+#skill-profile{ /* Container holding intro and skills side-by-side */
     display: flex;
     align-items: flex-start;
     gap: 50px;
     justify-content: space-between; /* puts space between the blocks */
 }
 
-#skill-section{
+#skill-section{ /* skills container */
     flex: auto;
 }
 
-#profile-section{
+#profile-section{ /* profile +intro containter */
     flex: auto;
 }
 
-.subtext{
+.subtext{ /* intro styling */
   color: rgb(93, 96, 91);
   font-size: 1.5rem;
 }
 
-.subtitle{
+.subtitle{ /* Section subtitle */
   color: white;
   font-size: 35px;
 }
 
-.skilltext{
+.skilltext{ /* skills text styling */
   color: rgb(93, 94, 92);
   font-size: 1rem;
 }
 
 /*-----------------------------experience section ----------------*/
-#experience{
+#experience{ /* experience section container */
     display: flex;
     flex-direction: column;
     height: 40rem;
     background-color: #96A78D;
 }
 
-#experience .title-second{
+#experience .title-second{ /* expierincec section title */
     color: #1e293b;
 }
-.left{
+
+.left{ /* left side, job title + date contianter */
     width: 100%;
     padding-right: 2rem;
     color: rgb(93, 96, 91);
 }
-.right{
+.right{ /*right side,d escription containter */
     width: 100%;
     padding-left: 2rem;
     color: rgb(93, 96, 91);
 }
 
-#job-container {
+#job-container { /* job contianter including (left divider right) */
   display: grid;
   grid-template-columns: 3fr 2px 5fr; /* left | divider | right */
   column-gap: 20px;
@@ -198,20 +191,20 @@ section {
   margin: 3rem 4rem 0 4rem;
 }
 
-.job-title, .company {
+.job-title, .company { /* job title and company spacing */
   padding: 10px 0;
 }
 
-.job-title{
+.job-title{ /* jobt title font  */
     font-size: 1.8rem;
 }
 
-.company{
+.company{ /* company font*/
     font-size: 1.6rem;
 }
 /* ---------------projects--------------- */
 
-#projects{
+#projects{ /*grid layout for projects*/
   text-align: center;
   align-items: center;
   display: flex;
@@ -221,23 +214,23 @@ section {
   padding: 1rem 4rem; 
 }
 
-.project-content {
+.project-content { /* spacing between each card*/
   padding: 15px;
 }
 
-.project-title {
+.project-title { /* title text style */
   margin: 0;
   font-size: 1.2rem;
   color: #333;
 }
 
-.project-description {
+.project-description { /* descritpion text style */
   font-size: 0.95rem;
   color: #555;
   margin: 10px 0;
 }
 
-.projects-grid {
+.projects-grid { /* grid layout for projects */
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 1.5rem; 
@@ -251,7 +244,7 @@ section {
 /* ------------------------------------------CONTACT---------------------------------------------------------------------- */
 
 
-#contact{
+#contact{ /* base contact session styling */
     display: flex;  
     flex-direction: column;
     justify-content: center;
@@ -259,14 +252,14 @@ section {
     height: 15rem;
 }
 
-#contact-bar{
+#contact-bar{  /* container holding contacts*/
     display: flex;  
     gap: 50px;
     padding-top: 2.5rem;
     margin-bottom: 2rem;  
 }
 
-.contact-cat{
+.contact-cat{ /* Individual contact section */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -280,19 +273,19 @@ section {
 
 }
 
-.contact-title{
+.contact-title{ /* title of contact card */
     flex: auto;
     color: #1e293b;
     font-size: 25px;
 }
 
-.contact-text{
+.contact-text{ /* body of contact card */
     color: rgb(136, 129, 121);
     font-size: 16px;
     text-decoration: none;
 }
 
-.contact-images{
+.contact-images{ /* the image of contacts */
   flex: auto;
   width: 80px;
   height: 80px;
@@ -300,7 +293,7 @@ section {
 }
 
 /*footer-------------------------------------------------------------------------*/
-footer {
+footer { /* bottom footer styling */
   display: flex;
   background-color: #161616;
   color: white;
@@ -319,7 +312,7 @@ footer {
   text-decoration: none; /* remove underline */
 }
 
-a {
+a { /* global anchor styling to remove underline for links*/
   text-decoration: none;
 }
 
