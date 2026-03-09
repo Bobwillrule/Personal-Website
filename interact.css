@@ -1,13 +1,118 @@
 /* skill bar */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.home-card {
+    height: 7rem;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-card.normal{
+    background: rgba(255, 255, 255, 0.05); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.card-content h2 {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  pointer-events: none; 
+}
+
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.3));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.overlay h2 {
+    font-size: 1rem;
+    color: white;
+}
+
+.overlay p {
+    font-size: 1rem;
+}
+/* Hover */
+.home-card.normal:hover .overlay {
+    transform: translateY(0);
+}
+
+.home-card.normal:hover img {
+    transform: scale(1.1);
+}
+
+.home-card.normal:hover {
+    box-shadow: 0 0 40px rgba(255,255,255,0.08);
+}
+
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;     
+    background: #ffffff;  
+}
+
+.home-card.normal:hover .card-content h2 {
+    opacity: 0;
+}
+
+/*------------------special see more button ------------*/
+
+#more.home-card{
+    background: none;        /* no background */
+    display: flex;
+    justify-content: flex-start; /* align left if you want */
+    align-items: flex-end;       /* align bottom like bottom-bar */
+    cursor: default;             /* no hover pointer */
+}
+
+#more .bottom-bar {
+    background: #ffffff; 
+}
+
+.card-content a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: rgb(106, 24, 24);
+    padding-left: 1rem; 
+    position: absolute;
+}
+
+/* ---------- Resume: skill bar -------------------------*/
 
 .skill {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .skill span {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .skill-bar {
@@ -20,91 +125,91 @@
 }
 
 .skill-fill {
-  height: 100%;
-  background-color: #bbc4bc;
-  border-radius: 3px;
+    height: 100%;
+    background-color: #bbc4bc;
+    border-radius: 3px;
 }
 
 .skill-marker {
-  position: absolute;
-  top: -25px;            
-  display: block;          
-  transform: translateX(-50%); 
-  font-weight: bold;
-  background-color: white;
-  color: rgb(136, 129, 121);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
+    position: absolute;
+    top: -25px;            
+    display: block;          
+    transform: translateX(-50%); 
+    font-weight: bold;
+    background-color: white;
+    color: rgb(136, 129, 121);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 /* Navbar styling */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  color: rgb(59, 58, 38);
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  z-index: 1000;
-  height: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    color: rgb(59, 58, 38);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    z-index: 1000;
+    height: 25px;
 }
 
 nav a {
-  color: #c7f9cc;
-  text-decoration: none;
-  font-weight: bold;
+    color: #c7f9cc;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav.scrolled {
-  background: #1e293b;
-  backdrop-filter: blur(8px);           
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #1e293b;
+    backdrop-filter: blur(8px);           
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* resume button */
 .resume-button {
-  display: inline-block;
-  padding: 25px 60px;
-  background-color: #1f2937; 
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 25px 60px;
+    background-color: #1f2937; 
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .resume-button:hover {
-  background-color: #374151; 
+    background-color: #374151; 
 }
 
 /* Project */
 
 .project-card {
-  width: 100%;              
-  max-width: 350px;         
-  margin: 0 auto;           
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 18rem;
+    width: 100%;              
+    max-width: 350px;         
+    margin: 0 auto;           
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 18rem;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 .project-image {
-  width: 100%;
-  height: 7rem;
-  object-fit: cover;
+    width: 100%;
+    height: 7rem;
+    object-fit: cover;
 }
 
 
@@ -167,26 +272,26 @@ body {
 
 
  .book-details {
-  position: absolute;
-  top: 0;
-  right: 100%; 
-  margin-right: 20px; 
-  width: 400px;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateX(-20px); 
+    position: absolute;
+    top: 0;
+    right: 100%; 
+    margin-right: 20px; 
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-20px); 
 }
 
 .book:hover .book-details {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
-  color:#1e293b;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+    color:#1e293b;
 }
 
 .book-details h3 {
@@ -224,17 +329,17 @@ body {
 
 /* Global messages */
 #global {
-  position: fixed; 
-  top: 60px; 
-  left: 0;
-  width: 100%;
-  background: rgba(51, 51, 51, 0.85); 
-  color: white;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0.2rem 1rem; 
-  z-index: 999; 
-  height: auto; 
-  font-size: 0.9rem;
+    position: fixed; 
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.85); 
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.2rem 1rem; 
+    z-index: 999; 
+    height: auto; 
+    font-size: 0.9rem;
 }

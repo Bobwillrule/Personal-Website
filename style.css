@@ -80,7 +80,8 @@ section {
 }
 
 .left-text{
-    padding: 50px;
+    padding: 1rem;
+    justify-content: left;
 }
 
 #full-name {
