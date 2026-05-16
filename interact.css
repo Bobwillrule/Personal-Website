@@ -1,234 +1,263 @@
 /* =========================================================
-    General File for elements in the website that are finer
-    ie buttons, bars, dividers
+   Interactive and component styling
    ========================================================= */
 
-/* ----skill bar ---- */
-.skill { /* container for each skill entry */
-  margin: 20px 0;
+/* Skill bars */
+.skill {
+  margin: 1.4rem 0;
 }
 
-.skill span { /* skill name text above the bar */
-  font-weight: bold;
+.skill span {
   display: block;
-  margin-bottom: 5px;
+  font-weight: 800;
+  margin-bottom: 0.55rem;
 }
 
-.skill-bar { /* background bar of the skill bar */
-    width: 400px;           
-    background-color: #ddd;
-    height: 10px;
-    border-radius: 3px;
-    overflow: visible;      
-    position: relative;
+.skill-bar {
+  background-color: rgba(31, 41, 55, 0.14);
+  border-radius: 999px;
+  height: 0.75rem;
+  max-width: 100%;
+  overflow: visible;
+  position: relative;
+  width: 400px;
 }
 
-.skill-fill { /* filled portion of bar */
+.skill-fill {
+  background: linear-gradient(90deg, #465a43, #bbc4bc);
+  border-radius: inherit;
   height: 100%;
-  background-color: #bbc4bc;
-  border-radius: 3px;
 }
 
-.skill-marker { /* arrow on top of bar where fill ends */
-  position: absolute;
-  top: -25px;            
-  display: block;          
-  transform: translateX(-50%); 
-  font-weight: bold;
+.skill-marker {
   background-color: white;
-  color: rgb(136, 129, 121);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(31, 41, 55, 0.16);
+  color: rgb(106, 99, 91);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  position: absolute;
+  top: -2rem;
+  transform: translateX(-50%);
 }
 
-/* ------- Navbar styling ------------ */
-nav { /* Main navigation bar */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
+/* Navbar */
+nav {
+  align-items: center;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.56), transparent);
   color: rgb(59, 58, 38);
   display: flex;
+  gap: clamp(0.7rem, 2vw, 2rem);
+  height: 64px;
   justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  z-index: 1000;
-  height: 25px;
-}
-
-nav a { /* Navigation links */
-  color: #c7f9cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav.scrolled {  /* change color when scrolled down */
-  background: #1e293b;
-  backdrop-filter: blur(8px);           
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* resume button */
-.resume-button { /* resume button in resume section */
-  display: inline-block;
-  padding: 25px 60px;
-  background-color: #1f2937; 
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.resume-button:hover { /* change color when hovered */
-  background-color: #374151; 
-}
-
-/* Project */
-
-.project-card { /* Individual project card container */
-  width: 100%;              
-  max-width: 350px;         
-  margin: 0 auto;           
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 18rem;
-}
-
-.project-card:hover { /* change when cursor hover on card */
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-.project-image { /* styling for image of card */
-  width: 100%;
-  height: 7rem;
-  object-fit: cover;
-}
-
-
-/*------------ EDUCATION  ---------*/
- 
-body { /* prevent horizontal scrolling on the page */
-    overflow-x: hidden; 
-}
-
-#education { /* education section container */
-    text-align: center;
-    padding: 1rem 10rem;
-    background: #a18661;
-}
-
-.bookshelf { /* container for the book-style education cards (big square in back) */
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 1rem; 
-    padding: 1rem;
-    background: #d4b996;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border: 5px solid #8d6e63;
-    max-width: 90%;
-    margin-left: 3rem;
-}
-
-.book { /* individual books in the shelf*/
-    width: 7rem;   
-    height: 22rem; 
-    background: linear-gradient(160deg, #5d4037, #3e2723);
-    color: #f4e1c6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Georgia", serif;
-    font-weight: bold;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    position: relative;
-    box-shadow: inset 0 0 6px rgba(255,255,255,0.3), 0 6px 12px rgba(0,0,0,0.3);
-    padding: 1rem;
-}
-
-.book:hover { /* hover animation for books */
-    transform: translateY(-25px) rotate(-2deg);
-    box-shadow: 0 14px 22px rgba(0,0,0,0.45);
-}
-
-/* Spine text vertical */
-.spine-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-size: 16px;
-    text-align: center;
-}
-
-
- .book-details { /* style for page when hover over page */
-  position: absolute;
+  left: 0;
+  padding: 0 1rem;
+  position: fixed;
   top: 0;
-  right: 100%; 
-  margin-right: 20px; 
-  width: 400px;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateX(-20px); 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  width: 100%;
+  z-index: 1000;
 }
 
-.book:hover .book-details { /* reveal detail when hovered */
+nav a {
+  border-radius: 999px;
+  color: #d8fddd;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.45rem 0.75rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: white;
+  transform: translateY(-1px);
+}
+
+nav.scrolled {
+  backdrop-filter: blur(14px);
+  background: rgba(30, 41, 59, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Buttons */
+.resume-button {
+  background-color: #1f2937;
+  border: 2px solid #1f2937;
+  border-radius: 999px;
+  color: white;
+  display: inline-block;
+  font-weight: 800;
+  padding: 0.9rem 1.6rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.resume-button:hover,
+.resume-button:focus-visible {
+  background-color: #374151;
+  border-color: #374151;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #1f2937;
+}
+
+/* Project cards */
+.project-card {
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 1.15rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
+  transform: translateY(-0.45rem);
+}
+
+.project-image {
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Education bookshelf */
+#education {
+  background: var(--wood);
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.bookshelf {
+  background: var(--wood-light);
+  border: 5px solid #8d6e63;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 100%;
+  padding: 1.25rem;
+}
+
+.book {
+  align-items: center;
+  background: linear-gradient(160deg, #5d4037, #3e2723);
+  border-radius: 1rem;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.22), 0 10px 18px rgba(0, 0, 0, 0.3);
+  color: #f4e1c6;
+  cursor: pointer;
+  display: flex;
+  font-family: Georgia, serif;
+  font-weight: 800;
+  height: 22rem;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  width: 7.5rem;
+}
+
+.book:hover,
+.book:focus-within,
+.book:focus-visible {
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.42);
+  outline: none;
+  transform: translateY(-1.3rem) rotate(-2deg);
+}
+
+.spine-text {
+  font-size: 1rem;
+  text-align: center;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+}
+
+.book-details {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+  color: #1e293b;
+  left: 50%;
+  max-width: min(82vw, 420px);
+  opacity: 0;
+  padding: 1.35rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  top: 1rem;
+  transform: translate(-50%, -0.75rem);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  width: 400px;
+  z-index: 3;
+}
+
+.book:hover .book-details,
+.book:focus-within .book-details,
+.book:focus-visible .book-details {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(0);
-  color:#1e293b;
+  transform: translate(-50%, 0);
 }
 
-.book-details h3 { /* title style when open details */
-    margin-top: 0;
-    font-size: 20px;
-    text-align: center;
+.book-details h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  text-align: left;
 }
 
-.book-details p { /* paragraph details*/
-    margin: 8px 0;
-    font-size: 15px;
+.book-details p {
+  font-size: 0.95rem;
+  margin: 0.45rem 0;
 }
 
-/* ----------- For expereinces divider --------- */
-.divider { /* a vertical line between left and right of work experience*/
-    width: 0.3rem;           
-    background-color: #1e293b;
-    height: 6rem;
-    border-radius: 3px;
-    overflow: visible;      
-    position: relative;
-    flex: 0, 0, auto;
-    margin-top: 3rem;
+/* Experience divider */
+.divider {
+  align-self: stretch;
+  background-color: #1e293b;
+  border-radius: 999px;
+  min-height: 6rem;
 }
 
-/* Global messages */
-#global { /* style for global messages banner at top */
-  position: fixed; 
-  top: 60px; 
-  left: 0;
-  width: 100%;
-  background: rgba(51, 51, 51, 0.85); 
+/* Global message */
+#global {
+  align-items: center;
+  background: rgba(22, 27, 34, 0.9);
   color: white;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0.2rem 1rem; 
-  z-index: 999; 
-  height: auto; 
   font-size: 0.9rem;
+  justify-content: center;
+  left: 50%;
+  max-width: min(92vw, 760px);
+  padding: 0.55rem 1rem;
+  position: fixed;
+  top: 76px;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 999;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+#global p {
+  margin: 0;
 }

@@ -3,320 +3,390 @@
    General typography, spacing, and base layout rules
    ========================================================= */
 
-html { /* enable smooth scrolling*/
+:root {
+  --ink: #1f2937;
+  --muted: #5d625b;
+  --cream: #faf8f5;
+  --sage: #96a78d;
+  --sage-dark: #6f8068;
+  --mint: #c7f9cc;
+  --wood: #a18661;
+  --wood-light: #d4b996;
+  --card: rgba(255, 255, 255, 0.78);
+  --shadow: 0 20px 45px rgba(31, 41, 55, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-body { /* main body styling */
-  font-family: "Poppins", "Segoe UI", sans-serif;
+body {
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #faf8f5;
+  background-color: var(--cream);
   color: #222;
   overflow-x: hidden;
 }
 
-section { /* default section layout  */
-  padding: 100px 10%;
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
+  min-height: 75vh;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 8vw, 8rem);
+  scroll-margin-top: 80px;
 }
 
-h1, h2, h3 { /*global heading style */
-  font-weight: 700;
-  color: #1f2937;
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
-p { /* Default paragraph styling */
-  line-height: 1.6;
+p {
+  line-height: 1.7;
   margin: 0.5rem 0;
 }
 
-
-/* Applies to all sections */
-section { /* Center section contents using flexbox */   
-  display: flex;              
-  align-items: center;
-  justify-content: center;
-  scroll-margin-top: 80px;    
-}
-
-.page-tag { /* style for page tags under each section */
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #c7f9cc;
-  letter-spacing: 1px;
-  margin-bottom: 4px;
-}
-
-/* Large title (like “My Academic Journey”) */
-.title-second,
-.title-third {
-  margin: 0;
-  font-size: 3.3rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  color: #1e293b;
-}
-
-
-/* Home section styling */
-#home {
-  background: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("./Images/whistler.jpg");
-  background-size: cover;
-  padding: 50px;
-}
-
-.flex-container { /* make html a flexbox */
-  display: flex;
-}
-
-.left-text{ /* container for homescreen text */
-    padding: 50px;
-}
-
-#full-name { /* style for name on home screen */
-  flex: auto;
-  color: #b5c8b4;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: 100px;
-}
-
-#work-title{ /* title under name*/
-    flex: auto;
-    color: #B6CEB4;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 30px;
-}
-
-.icon { /* social icons */
-    flex: auto;
-    width:24px; 
-    padding: 40px;
-}
-
-.socials {/* social icons container*/
-    display: flex;          
-    justify-content: left;  /* center icons horizontally */
-    gap: 40px;               
-    margin-top: 20px;     
-}
-
-#display-picture{ /* profile picture */
-    flex: auto;
-    width: 150px;
-}
-
-/*------------------ Resume section--------------------- */
-
-#resume{ /* general resume section containter */
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;
-    background-color: #96A78D;
-    padding: 50px;
-}
-
-
-#profile-text{ /* blurb text intro container */
-    flex: auto;
-    width: 25rem;
-    color: rgb(93, 96, 91);
-    height: 150px;
-}
-
-#skill-profile{ /* Container holding intro and skills side-by-side */
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    justify-content: space-between; /* puts space between the blocks */
-}
-
-#skill-section{ /* skills container */
-    flex: auto;
-}
-
-#profile-section{ /* profile +intro containter */
-    flex: auto;
-}
-
-.subtext{ /* intro styling */
-  color: rgb(93, 96, 91);
-  font-size: 1.5rem;
-}
-
-.subtitle{ /* Section subtitle */
-  color: white;
-  font-size: 35px;
-}
-
-.skilltext{ /* skills text styling */
-  color: rgb(93, 94, 92);
-  font-size: 1rem;
-}
-
-/*-----------------------------experience section ----------------*/
-#experience{ /* experience section container */
-    display: flex;
-    flex-direction: column;
-    height: 40rem;
-    background-color: #96A78D;
-}
-
-#experience .title-second{ /* expierincec section title */
-    color: #1e293b;
-}
-
-.left{ /* left side, job title + date contianter */
-    width: 100%;
-    padding-right: 2rem;
-    color: rgb(93, 96, 91);
-}
-.right{ /*right side,d escription containter */
-    width: 100%;
-    padding-left: 2rem;
-    color: rgb(93, 96, 91);
-}
-
-#job-container { /* job contianter including (left divider right) */
-  display: grid;
-  grid-template-columns: 3fr 2px 5fr; /* left | divider | right */
-  column-gap: 20px;
-  align-items: start;
-  padding: 0 3.5rem 0 3.5rem;
-  margin: 3rem 4rem 0 4rem;
-}
-
-.job-title, .company { /* job title and company spacing */
-  padding: 10px 0;
-}
-
-.job-title{ /* jobt title font  */
-    font-size: 1.8rem;
-}
-
-.company{ /* company font*/
-    font-size: 1.6rem;
-}
-/* ---------------projects--------------- */
-
-#projects{ /*grid layout for projects*/
-  text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background: #a18661;
-  padding: 1rem 4rem; 
-}
-
-.project-content { /* spacing between each card*/
-  padding: 15px;
-}
-
-.project-title { /* title text style */
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.project-description { /* descritpion text style */
-  font-size: 0.95rem;
-  color: #555;
-  margin: 10px 0;
-}
-
-.projects-grid { /* grid layout for projects */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1.5rem; 
-  margin: 3rem 15rem;
-  padding: 0, 20rem;
-  width: 80%;
-  max-width: 1200px; 
-}
-
-
-/* ------------------------------------------CONTACT---------------------------------------------------------------------- */
-
-
-#contact{ /* base contact session styling */
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;
-    background-color: #96A78D;
-    height: 15rem;
-}
-
-#contact-bar{  /* container holding contacts*/
-    display: flex;  
-    gap: 50px;
-    padding-top: 2.5rem;
-    margin-bottom: 2rem;  
-}
-
-.contact-cat{ /* Individual contact section */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: auto;
-  align-items: center;
-  width: 200px;       
-  text-align: center; 
-  margin: 0;   
-  line-height: 1.2;
-  gap: 0.1rem;
-
-}
-
-.contact-title{ /* title of contact card */
-    flex: auto;
-    color: #1e293b;
-    font-size: 25px;
-}
-
-.contact-text{ /* body of contact card */
-    color: rgb(136, 129, 121);
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.contact-images{ /* the image of contacts */
-  flex: auto;
-  width: 80px;
-  height: 80px;
-  object-fit: contain; 
-}
-
-/*footer-------------------------------------------------------------------------*/
-footer { /* bottom footer styling */
-  display: flex;
-  background-color: #161616;
-  color: white;
-  text-align: center;
-  position: relative; 
-  bottom: 0;
-  width: 100%;
-  height: 4rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-text{
-  flex: auto;
-  color: rgb(136, 129, 121);
-  text-decoration: none; /* remove underline */
-}
-
-a { /* global anchor styling to remove underline for links*/
+a {
   text-decoration: none;
 }
 
+.page-tag {
+  color: var(--mint);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.65rem;
+  text-transform: uppercase;
+}
 
+.title-second,
+.title-third {
+  color: var(--ink);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 850;
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
 
+/* Home section styling */
+#home {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(199, 249, 204, 0.24), transparent 28rem),
+    linear-gradient(90deg, rgba(16, 24, 39, 0.78), rgba(16, 24, 39, 0.42)),
+    url("./Images/whistler.jpg") center/cover;
+  gap: clamp(2rem, 8vw, 8rem);
+  justify-content: space-between;
+  min-height: 100vh;
+}
 
+.flex-container {
+  display: flex;
+}
 
+.left-text {
+  max-width: 780px;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.eyebrow {
+  color: var(--mint);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+#full-name {
+  color: #dcebd9;
+  font-size: clamp(4.5rem, 12vw, 9rem);
+  line-height: 0.92;
+  margin: 0.35rem 0 0.5rem;
+  text-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+#work-title {
+  color: #b6ceb4;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.hero-summary {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 36rem;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+#display-picture {
+  aspect-ratio: 1;
+  border: 0.45rem solid rgba(255, 255, 255, 0.78);
+  border-radius: 35% 65% 45% 55%;
+  box-shadow: var(--shadow);
+  flex: 0 0 auto;
+  max-width: min(28vw, 280px);
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Resume section */
+#resume {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent),
+    var(--sage);
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#skill-profile {
+  align-items: stretch;
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  justify-content: center;
+  margin-top: 2rem;
+  width: min(1100px, 100%);
+}
+
+.panel-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  flex: 1 1 0;
+  padding: clamp(1.35rem, 4vw, 2.4rem);
+}
+
+#profile-text {
+  color: var(--muted);
+  max-width: 33rem;
+}
+
+.subtitle {
+  color: var(--ink);
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  margin: 0 0 1.5rem;
+}
+
+.skilltext {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Experience section */
+#experience {
+  background-color: var(--sage);
+  flex-direction: column;
+}
+
+#job-container {
+  display: grid;
+  grid-template-columns: minmax(170px, 3fr) 3px minmax(260px, 5fr);
+  column-gap: clamp(1rem, 4vw, 2.5rem);
+  row-gap: 1.5rem;
+  margin-top: 3rem;
+  width: min(1050px, 100%);
+}
+
+.left,
+.right {
+  color: var(--muted);
+}
+
+.left {
+  text-align: right;
+}
+
+.right {
+  background: rgba(255, 255, 255, 0.36);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.right ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.job-title,
+.company {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.job-title {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.company {
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+}
+
+/* Projects */
+#projects {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 45%),
+    var(--wood);
+  flex-direction: column;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 3rem;
+  width: min(1120px, 100%);
+}
+
+.project-content {
+  padding: 1.2rem;
+}
+
+.project-title {
+  color: var(--ink);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.project-description {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0.75rem 0 0;
+}
+
+/* Contact */
+#contact {
+  background-color: var(--sage);
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+#contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  width: min(760px, 100%);
+}
+
+.contact-cat {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 1.25rem;
+  display: flex;
+  flex: 1 1 240px;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact-title {
+  color: var(--ink);
+  font-size: 1.35rem;
+  margin: 0.8rem 0 0;
+}
+
+.contact-text {
+  color: #5d5142;
+  font-size: 1rem;
+}
+
+.contact-images {
+  height: 72px;
+  object-fit: contain;
+  width: 72px;
+}
+
+/* Footer */
+footer {
+  align-items: center;
+  background-color: #161616;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  min-height: 4.5rem;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-text {
+  color: rgb(170, 165, 158);
+  flex: 1 1 180px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    gap: 0.65rem;
+    overflow-x: auto;
+    padding-inline: 0.75rem;
+  }
+
+  #home,
+  #skill-profile {
+    flex-direction: column;
+  }
+
+  #home {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #display-picture {
+    max-width: 220px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  section {
+    min-height: auto;
+  }
+
+  #job-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

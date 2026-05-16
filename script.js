@@ -1,21 +1,17 @@
-// Select the navigation bar element from the DOM
 const nav = document.querySelector("nav");
-
-// Select the globar message bar
 const globalMsg = document.querySelector("#global");
 
-
-window.addEventListener("scroll", () => {
-
-    // if scroll more than 50 px down the page
+const updateChrome = () => {
     if (window.scrollY > 50) {
-        nav.classList.add("scrolled"); // unstick nav
+        nav?.classList.add("scrolled");
     } else {
-        nav.classList.remove("scrolled"); // stick back nav
+        nav?.classList.remove("scrolled");
     }
 
-    // if user scroll more than 100 px or more
-    if (window.scrollY > 100){
-        globalMsg.remove() // remove the global banner
+    if (window.scrollY > 100 && globalMsg?.isConnected) {
+        globalMsg.remove();
     }
-})
+};
+
+window.addEventListener("scroll", updateChrome, { passive: true });
+updateChrome();

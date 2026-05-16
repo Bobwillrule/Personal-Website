@@ -1,37 +1,61 @@
-/* Simple row layout for projects */
+.projects-page {
+  gap: 1.5rem;
+  padding-top: 8rem;
+}
+
+.projects-intro {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.1rem;
+  max-width: 720px;
+  text-align: center;
+}
+
 .project-row {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 2rem;
-  margin: 2rem 0;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(260px, 1.2fr);
+  margin: 0;
+  min-height: auto;
+  padding: 1.25rem;
+  text-align: left;
+  width: min(980px, 100%);
 }
 
 .project-img {
-  width: 100%;
-  max-height: 300px;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.9rem;
+  height: auto;
   object-fit: cover;
-  border-radius: 0.75rem;
-  margin-bottom: 1rem;
+  width: 100%;
 }
 
-.project-row h3 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+.project-row h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  margin: 0 0 0.6rem;
 }
 
 .project-row p {
   color: #555;
-  line-height: 1.5;
   margin-bottom: 1rem;
 }
 
 .project-link {
-  text-decoration: none;
-  font-weight: bold;
-  color: #2563eb;
+  color: #315c2b;
+  font-weight: 800;
 }
 
-.project-link:hover {
+.project-link:hover,
+.project-link:focus-visible {
   text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
 }
