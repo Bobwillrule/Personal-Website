@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Portfolio website for Hugo Chen, a UBC computer science student and software developer.">
+    <title>Hugo Chen | Software Developer</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="interact.css">
 </head>
 <body>
-    <!--Navigation bar-->
-    <nav> 
+    <nav aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#resume">Resume</a>
         <a href="#education">Education</a>
@@ -18,311 +19,329 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <div id="global"> <!--global message-->
-        <p> Hi visitor! This site is still under construction, but feel free to look around!</p>
+    <div id="global" role="status" aria-live="polite">
+        <p>Hi visitor! This site is evolving, but feel free to look around.</p>
     </div>
 
-    <!---------------------HOME PAGE---------------------------------------->
-    <section id = "home" class="flex-container">
-        <div class="left-text">
-            <h1 id="full-name">Hugo Chen</h1>
-            <h2 id="work-title">Software Developer</h2>
+    <main>
+        <section id="home" class="flex-container">
+            <div class="left-text">
+                <p class="eyebrow">Portfolio</p>
+                <h1 id="full-name">Hugo Chen</h1>
+                <h2 id="work-title">Software Developer</h2>
+                <p class="hero-summary">I build practical software, polished interfaces, and hands-on engineering projects.</p>
 
-            <div class="socials"> <!--socials icon-->
-                <a href="https://www.linkedin.com/in/hugochen07/" target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="icon">
+                <div class="socials" aria-label="Social links">
+                    <a href="https://www.linkedin.com/in/hugochen07/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="" class="icon">
+                    </a>
+                    <a href="https://github.com/Bobwillrule" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="" class="icon">
+                    </a>
+                    <a href="mailto:hugohqchen@gmail.com" aria-label="Email Hugo">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="" class="icon">
+                    </a>
+                </div>
+            </div>
+            <img id="display-picture" src="./Images/Hugo.jpg" alt="Portrait of Hugo Chen">
+        </section>
+
+        <section id="resume">
+            <h3 class="page-tag">About</h3>
+            <h2 class="title-second">Who is this guy?</h2>
+            <div id="skill-profile">
+                <div id="profile-section" class="panel-card">
+                    <h2 class="subtitle">Introduction</h2>
+                    <div id="profile-text">
+                        <p>
+                            Hi! I’m Hugo, a UBC Vancouver student who loves coding, building, and experimenting with new technologies. I’m driven by curiosity and the challenge of turning ideas into working projects that make an impact.
+                        </p>
+                    </div>
+                    <div class="button-row">
+                        <a href="./PDF/HugoResume_Oct1.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">My Resume</a>
+                        <a href="#contact" class="resume-button secondary-button">Hire me!</a>
+                    </div>
+                </div>
+
+                <div id="skill-section" class="panel-card">
+                    <h2 class="subtitle">Skills</h2>
+                    <div class="skill">
+                        <span class="skilltext">Python</span>
+                        <div class="skill-bar" aria-label="Python proficiency 70 percent">
+                            <div class="skill-fill" style="width: 70%;"></div>
+                            <span class="skill-marker" style="left: 70%;">70%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skilltext">C, C++</span>
+                        <div class="skill-bar" aria-label="C and C++ proficiency 65 percent">
+                            <div class="skill-fill" style="width: 65%;"></div>
+                            <span class="skill-marker" style="left: 65%;">65%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skilltext">Java</span>
+                        <div class="skill-bar" aria-label="Java proficiency 65 percent">
+                            <div class="skill-fill" style="width: 65%;"></div>
+                            <span class="skill-marker" style="left: 65%;">65%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skilltext">HTML, CSS, JavaScript</span>
+                        <div class="skill-bar" aria-label="HTML CSS and JavaScript proficiency 55 percent">
+                            <div class="skill-fill" style="width: 55%;"></div>
+                            <span class="skill-marker" style="left: 55%;">55%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skilltext">Kotlin</span>
+                        <div class="skill-bar" aria-label="Kotlin proficiency 50 percent">
+                            <div class="skill-fill" style="width: 50%;"></div>
+                            <span class="skill-marker" style="left: 50%;">50%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skilltext">MATLAB</span>
+                        <div class="skill-bar" aria-label="MATLAB proficiency 65 percent">
+                            <div class="skill-fill" style="width: 65%;"></div>
+                            <span class="skill-marker" style="left: 65%;">65%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skilltext">Microsoft Suite</span>
+                        <div class="skill-bar" aria-label="Microsoft Suite proficiency 70 percent">
+                            <div class="skill-fill" style="width: 70%;"></div>
+                            <span class="skill-marker" style="left: 70%;">70%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div>
+                <h3 class="page-tag">Education</h3>
+                <h2 class="title-second">Academic Journey</h2>
+            </div>
+
+            <div class="bookshelf" aria-label="Education timeline">
+                <article class="book" tabindex="0">
+                    <span class="spine-text">
+                        BSc. Computer Science<br>
+                        University of British Columbia<br>
+                        2025 – 2028
+                    </span>
+                    <div class="book-details">
+                        <h3>Bachelor of Computer Science</h3>
+                        <p>University of British Columbia</p>
+                        <p><strong>Years:</strong> 2025 – 2028</p>
+                        <p>Entered UBC Computer Science directly as a <em>second-year student</em> due to advanced standing.</p>
+                        <p><strong>GPA:</strong> 4.17/4.33</p>
+                        <p><strong>Relevant Courses:</strong> Models of Computation, Software Construction, Data Structures and Algorithms</p>
+                    </div>
+                </article>
+
+                <article class="book" tabindex="0">
+                    <span class="spine-text">
+                        Concurrent Studies Student<br>
+                        Simon Fraser University<br>
+                        2023 – 2025
+                    </span>
+                    <div class="book-details">
+                        <h3>Concurrent Studies</h3>
+                        <p>Simon Fraser University</p>
+                        <p><strong>Years:</strong> 2023 – 2025</p>
+                        <p>Selected for admission into SFU’s <em>Concurrent Studies</em> program, which allows top secondary students to take university-level courses before graduation.</p>
+                        <p><strong>GPA:</strong> 3.91/4.33</p>
+                        <p><strong>Relevant Coursework:</strong> Introduction to Computer Science, Engineering Analysis, Linear Algebra</p>
+                    </div>
+                </article>
+
+                <article class="book" tabindex="0">
+                    <span class="spine-text">
+                        Dogwood Diploma<br>
+                        Centennial Secondary School<br>
+                        2021 – 2025
+                    </span>
+                    <div class="book-details">
+                        <h3>High School Diploma</h3>
+                        <p>Centennial Secondary School</p>
+                        <p><strong>Years:</strong> 2021 – 2025</p>
+                        <p><strong>Average:</strong> 94/100</p>
+                        <p><strong>Highlights:</strong> Led school peer tutoring and expanded the program from 30 to 100 participants per semester.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="page-tag">Work Experience</h2>
+            <h2 class="title-second">More of my qualifications</h2>
+            <div id="job-container">
+                <div class="left">
+                    <div class="job-title">Framer</div>
+                    <p class="job-date">Jun. 2023 – Oct. 2024</p>
+                    <span class="job-tag">Construction + Client Impact</span>
+                </div>
+                <div class="divider" aria-hidden="true"></div>
+                <div class="right">
+                    <div class="company">Linty Construction</div>
+                    <ul>
+                        <li>Framed 4 custom residential homes, including an energy-efficient Step Code 5 project.</li>
+                        <li>Streamlined project coordination by leading English/Mandarin communications between clients and contractors.</li>
+                        <li>Drove an increase in high-end client inquiries by designing and launching a website.</li>
+                    </ul>
+                </div>
+
+                <div class="left">
+                    <div class="job-title">Assembler / Sales Associate</div>
+                    <p class="job-date">Jun. 2022 – Jun. 2023</p>
+                    <span class="job-tag">Sales + Service Quality</span>
+                </div>
+                <div class="divider" aria-hidden="true"></div>
+                <div class="right">
+                    <div class="company">Canadian Tire</div>
+                    <ul>
+                        <li>Delivered the lowest rework and return rate on serviced bicycles.</li>
+                        <li>Recognized by managers for precision and reliability during peak seasonal demand.</li>
+                        <li>Advised customers on bike selection, achieving top monthly sales in the store.</li>
+                    </ul>
+                </div>
+
+                <div class="left">
+                    <div class="job-title">Teacher</div>
+                    <p class="job-date">Jan. 2022 – Jun. 2022</p>
+                    <span class="job-tag">Teaching + Communication</span>
+                </div>
+                <div class="divider" aria-hidden="true"></div>
+                <div class="right">
+                    <div class="company">Lively Education</div>
+                    <ul>
+                        <li>Led weekly virtual English classes for ESL students, supporting vocabulary, grammar, and conversational skills.</li>
+                        <li>Adapted lesson plans to varying proficiency levels, ensuring engaging and accessible instruction.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h3 class="page-tag">Projects</h3>
+            <h2 class="title-third">See my creations!</h2>
+            <div class="projects-grid">
+                <a href="./PDF/Project Portfolio.pdf" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <img src="./Images/table.png" alt="Four-way coffee table" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Four-way Coffee Table</h3>
+                        <p class="project-description">A custom sliding coffee table designed and built from scratch, combining CAD modeling with hands-on woodworking techniques.</p>
+                        <div class="project-tags" aria-label="Project technologies">
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://github.com/Bobwillrule" target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="icon">
+
+                <a href="https://github.com/Bobwillrule/Personal-Website" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <img src="./Images/website.png" alt="Personal website screenshot" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Personal Website</h3>
+                        <p class="project-description">A portfolio website built to showcase projects, featuring smooth scrolling, responsive design, and modern UI elements.</p>
+                        <div class="project-tags" aria-label="Project technologies">
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                        </div>
+                    </div>
                 </a>
-                <a href="mailto:hugohqchen@gmail.com" target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Email" class="icon">
+
+                <a href="https://github.com/Bobwillrule/Unit-Calculator" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <img src="./Images/calculator.png" alt="Unit calculator app screenshot" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Unit Calculator</h3>
+                        <p class="project-description">An Android app that handles mixed metric and imperial units, calculations, parentheses, and unit conversions.</p>
+                        <div class="project-tags" aria-label="Project technologies">
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Bobwillrule/bot" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <img src="./Images/bot.png" alt="Price getter bot graphic" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Price Getter</h3>
+                        <p class="project-description">A Python tool that retrieves and monitors real-time price data from APIs, supporting market analysis and tracking.</p>
+                        <div class="project-tags" aria-label="Project technologies">
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Bobwillrule/Financial-Tracker" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <img src="./Images/tracker.png" alt="Financial tracker app screenshot" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Financial Tracker</h3>
+                        <p class="project-description">A Java-based financial tracker that records transactions and categorizes spending through an interactive desktop interface.</p>
+                        <div class="project-tags" aria-label="Project technologies">
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#contact" class="project-card">
+                    <img src="./Images/game.png" alt="Sewage Search game screenshot" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Sewage Search</h3>
+                        <p class="project-description">A 2D game created for SFU Mountain Madness 2025, where players descend into a surreal sewer to rescue a lost cat.</p>
+                        <div class="project-tags" aria-label="Project technologies">
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                            <span>Placeholder</span>
+                        </div>
+                    </div>
                 </a>
             </div>
-        </div>
-        <img id="display-picture" src="./Images/Hugo.jpg" alt="Personal Image" width: 50px>
+        </section>
 
-    </section>
-    <!-- -------------------- Resume section--------------------------------->
-    <section id="resume"> 
-        <h3 class="page-tag">About</h3>
-        <h2 class="title-second">Who is this guy?</h2>
-        <div id="skill-profile"> 
-            <!-- bottom of the intro-->
-            <div id="profile-section"> <!--general intro same level as skills bar-->
-                <h2 class="subtitle">Introduction</h2>
-                <div id="profile-text">
-                    <p>
-                        Hi! I’m Hugo, a UBC Vancouver student who loves coding, building, and experimenting with new technologies. I’m driven by curiosity and the challenge of turning ideas into working projects that make an impact.
-                    </p>
+        <section id="contact">
+            <h3 class="page-tag">Contact</h3>
+            <h2 class="title-second">I would love to connect with you</h2>
+            <div id="contact-bar">
+                <div class="contact-cat">
+                    <img src="./Images/email.png" alt="" class="contact-images">
+                    <h3 class="contact-title">Email Me At</h3>
+                    <a href="mailto:hugohqchen@gmail.com" class="contact-text"><strong>hugohqchen@gmail.com</strong></a>
                 </div>
-                <a href="./PDF/HugoResume_Oct1.pdf" target="_blank" class="resume-button">My Resume</a>
-                <a href="#contact" class="resume-button">Hire me!</a>
-            </div>
-
-            <div id="skill-section"> <!--skills bar-->
-                <h2 class="subtitle">Skills</h2>
-                <div class="skill">
-                    <span class="skilltext">Python</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 70%;"></div>
-                        <span class="skill-marker" style="left: 70%;">70%</span>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span class="skilltext">C, C++</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 65%;"></div>
-                        <span class="skill-marker" style="left: 65%;">65%</span>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span class="skilltext">Java</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 65%;"></div>
-                        <span class="skill-marker" style="left: 65%;">65%</span>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span class="skilltext">HTML, CSS, Javascript</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 55%;"></div>
-                        <span class="skill-marker" style="left: 55%;">55%</span>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span class="skilltext">Kotlin</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 50%;"></div>
-                        <span class="skill-marker" style="left: 50%;">50%</span>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span class="skilltext">MATLAB</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 65%;"></div>
-                        <span class="skill-marker" style="left: 65%;">65%</span>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span class="skilltext">Microsoft Suite</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 70%;"></div>
-                        <span class="skill-marker" style="left: 70%;">70%</span>
-                    </div>
+                <div class="contact-cat">
+                    <img src="./Images/linkedin.png" alt="" class="contact-images">
+                    <h3 class="contact-title">Let's Connect!</h3>
+                    <a href="https://www.linkedin.com/in/hugochen07/" target="_blank" rel="noopener noreferrer" class="contact-text"><strong>Profile</strong></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!----------------------------------Education----------------------------------------------------->
-    <section id="education">
-    <div>
-        <h3 class="page-tag">Education</h3>
-        <h2 class="title-second">Academic Journey</h2>
-    </div>
-
-    <div class="bookshelf">
-        <!-- Book 1 -->
-        <div class="book" onclick="toggleDetails(this)">
-        <span class="spine-text"> <!-- Book 1 cover -->
-            BSc. Computer Science<br>
-            University of British Columbia<br>
-            2025 – 2028
-        </span>
-        <div class="book-details"> <!-- Book 1 when opened -->
-            <h3>Bachelor of Computer Science</h3>
-            <p>University of British Columbia</p>
-            <p><strong>Years:</strong> 2025 – 2028</p>
-            <p> Entered UBC Computer Science directly as a <em>second-year student</em> due to advanced standing.</p>
-            <p><strong>GPA:</strong> 4.17/4.33</p>
-            <p><strong>Relevant Courses:</strong>Models of Computation, Software Construction, Data Strucutres and Algorithms</p>
-        </div>
-        </div>
-
-        <!-- Book 2 -->
-        <div class="book" onclick="toggleDetails(this)">
-        <span class="spine-text"> <!-- Book 2 cover -->
-            Concurrent studies student<br>
-            Simon Fraser University<br>
-            2023 – 2025
-        </span>
-        <div class="book-details"> <!-- Book 2 when opened -->
-            <h3>Concurrent Studies</h3> 
-            <p>Simon Fraser University</p>
-            <p><strong>Years:</strong> 2022 - 2024</p>
-            <p>Selected for admission into SFU’s <em>Concurrent Studies</em> program, which allows top secondary students (90%+ standing) to take university-level courses before graduation.</p>
-            <p><strong>GPA:</strong> 3.91 / 4.33</p>
-            <p><strong>Relevant coursework:</strong> Introduction to computer science, introduction to engineering analysis, linear algebra</p>
-        </div>
-        </div>
-
-        <!-- Book 3 -->
-        <div class="book" onclick="toggleDetails(this)">
-        <span class="spine-text"> <!-- Book 3 cover -->
-            Dogwood Diploma<br>
-            Centennial Secondary School<br>
-            2021-2025
-        </span>
-        <div class="book-details"> <!-- Book 2 when opened -->
-            <h3>Highschool Diploma</h3> 
-            <p>Centennial Secondary School</p>
-            <p><strong>Year:</strong> 2021-205</p>
-            <p><strong>Average:</strong> 94/100</p>
-            <p><strong>Highlights:</strong> Led school peer tutoring expanding program from 30 to 100 participants per semester.</p>
-        </div>
-        </div>
-    </div>
-    </section>
-    <!----------------------------------WORK EXPERIENCE----------------------------------------------->
-    <section id="experience">
-    <h2 class="page-tag">Work Experience</h2>
-    <h2 class="title-second">More of my qualifications</h2>
-    <div id="job-container">
-        <!--------card 1---------->
-        <div class="left">
-            <div class="job-title">Framer</div> <!--left of the divider with title and date-->
-            <p>Jun. 2023 -- Oct. 2024</p>
-        </div>
-        <div class="divider"></div> <!--divider divides the left and right-->
-        <div class="right"> <!--right of the divider with description-->
-            <div class="company">Linty Construction</div>
-            <ul>
-                <li>Framed 4 custom residential homes, including an energy-efficient Step Code 5 project</li>
-                <li>Streamlined project coordination by leading English/mandarin communications between clients and contractors.</li>
-                <li>Drove an increase in high-end client inquiries by designing and launching a website.</li>
-            </ul>
-        </div>
-        <!--------card 2------->
-        <div class="left">
-            <div class="job-title">Assembler / Sales associate</div>
-            <p>Jun. 2022 -- Jun. 2023</p>
-        </div>
-        <div class="divider"></div>
-        <div class="right">
-            <div class="company">Canadian Tire</div>
-            <ul>
-                <li>Delivered the lowest rework and return rate on serviced bicycles</li>
-                <li>Recognized by managers for precision and reliability during peak seasonal demand</li>
-                <li>Advised customers on bike selection, achieving top monthly sales in the store</li>
-            </ul>
-        </div>
-        <!-------card 3------->
-        <div class="left">
-            <div class="job-title">Teacher</div>
-            <p>Jan. 2022 -- Jun. 2022</p>
-        </div>
-        <div class="divider"></div>
-        <div class="right">
-            <div class="company">Lively Education</div>
-            <ul>
-                <li>Led weekly virtual English classes for ESL students, supporting vocabulary, grammar, and conversational skills</li>
-                <li>Adapted lesson plans to varying proficiency levels, ensuring engaging and accessible instruction</li>
-            </ul>
-        </div>
-    </div>
-    </section>
-
-    <!----------------------------------Projects------------------------------------------------------>
-    <section id="projects">
-    <h3 class="page-tag">Projects</h3> 
-    <h2 class="title-third">See my creations!</h2>
-    <div class="projects-grid">
-         <!--------card 1---------->
-        <a href="./PDF/Project Portfolio.pdf" class="project-card"> 
-        <img src="./Images/table.png" alt="Project Screenshot" class="project-image">
-        <div class="project-content">
-            <h3 class="project-title">Four-way coffee table</h3>
-            <p class="project-description">
-            A custom sliding coffee table designed and built from scratch, combining CAD modeling with hands-on woodworking techniques.
-            </p>
-        </div>
-        </a>
-
-         <!--------card 2---------->
-        <a href="https://github.com/Bobwillrule/Personal-Website" class="project-card">
-        <img src="./Images/website.png" alt="Project Screenshot" class="project-image">
-        <div class="project-content">
-            <h3 class="project-title">Personal Website</h3>
-            <p class="project-description">
-            A portfolio website built to showcase projects, featuring smooth scrolling, responsive design, and modern UI elements.
-            </p>
-        </div>
-        </a>
-
-         <!--------card 3---------->
-        <a href="https://github.com/Bobwillrule/Unit-Calculator" class="project-card">
-        <img src="./Images/calculator.png" alt="calculator-picture" class="project-image">
-        <div class="project-content">
-            <h3 class="project-title">Unit Calculator</h3>
-            <p class="project-description">
-            An Android app that handles mixed metric and imperial units, supports calculations with order of operations, parentheses, and unit conversions.
-            </p>
-        </div>
-        </a>
-
-         <!--------card 4---------->
-        <a href="https://github.com/Bobwillrule/bot" class="project-card">
-        <img src="./Images/bot.png" alt="Project Screenshot" class="project-image">
-        <div class="project-content">
-            <h3 class="project-title">Price Getter</h3>
-            <p class="project-description">
-            A Python tool that retrieves and monitors real-time price data from APIs, supporting market analysis and tracking.
-            </p>
-        </div>
-        </a>
-
-         <!--------card 5---------->
-        <a href="https://github.com/Bobwillrule/Financial-Tracker" class="project-card">
-        <img src="./Images/tracker.png" alt="financial-tracker" class="project-image">
-        <div class="project-content">
-            <h3 class="project-title">Financial Tracker</h3>
-            <p class="project-description">A Java-based financial tracker that records transactions and  
-                categorizes spending through an interactive desktop interface.</p>
-        </div>
-        </a>
-
-         <!--------card 6---------->
-        <a href="#" class="project-card">
-        <img src="./Images/game.png" alt="game" class="project-image">
-        <div class="project-content">
-            <h3 class="project-title">Sewage Search</h3>
-            <p class="project-description">2D game created for SFU Mountain Madness 2025, 
-                where players descend into a surreal sewer to rescue a lost cat.</p>
-        </div>
-        </a>
-    </div>
-    </section>
-
-    <!----------------------------------Contacts------------------------------------------------------>
-    <section id="contact">
-        <h3 class="page-tag">Contact</h3>
-        <h2 class="title-second">I would love to connect with you</h2>
-        <div id="contact-bar">
-            <div class="contact-cat"><!--Icons with text/link underneath-->
-                <img src="./Images/email.png" alt="Email" class="contact-images">
-                <h3 class="contact-title">Email Me At</h3>
-                <a href="mailto:hugohqchen@gmail.com" class="contact-text"><strong>hugohqchen@gmail.com</strong></a>
-            </div>
-            <div class="contact-cat">
-                <img src="./Images/linkedin.png" alt="LinkedIn" class="contact-images">
-                <h3 class="contact-title">Let's Connect!</h3>
-                <a href="ttps://www.linkedin.com/in/hugochen07/" target="_blank" class="contact-text"><strong>Profile</strong></a>
-            </div>
-        </div>
-    </section>
-
-    <!----------------------------------Footer------------------------------------------------------>
     <footer>
-        <a class="footer-text" href="mailto:hugohqchen@gmail.com">*Email Me!*</a>
-        <span class="footer-text">2025 Created by Hugo Chen</span>
-        <a href="https://github.com/Bobwillrule/Personal-Website" target="_blank" class="footer-text">Website code</a>
+        <a class="footer-text" href="mailto:hugohqchen@gmail.com">Email Me</a>
+        <span class="footer-text">2026 Created by Hugo Chen</span>
+        <a href="https://github.com/Bobwillrule/Personal-Website" target="_blank" rel="noopener noreferrer" class="footer-text">Website Code</a>
     </footer>
     <script src="script.js"></script>
 </body>
