@@ -148,10 +148,33 @@ a {
 /* Resume section */
 #resume {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent),
+    radial-gradient(circle at 12% 18%, rgba(199, 249, 204, 0.36), transparent 18rem),
+    radial-gradient(circle at 86% 72%, rgba(31, 41, 55, 0.12), transparent 16rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 48%),
     var(--sage);
   flex-direction: column;
   gap: 1.25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#resume::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  content: "";
+  inset: 0;
+  opacity: 0.32;
+  pointer-events: none;
+  position: absolute;
+}
+
+#resume .page-tag,
+#resume .title-second,
+#skill-profile {
+  position: relative;
+  z-index: 1;
 }
 
 #skill-profile {
@@ -198,23 +221,39 @@ a {
 /* Experience section */
 #experience {
   background:
-    radial-gradient(circle at 18% 18%, rgba(199, 249, 204, 0.28), transparent 20rem),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.2), transparent 46%),
+    radial-gradient(circle at 18% 18%, rgba(199, 249, 204, 0.34), transparent 20rem),
+    radial-gradient(circle at 86% 20%, rgba(31, 41, 55, 0.16), transparent 14rem),
+    radial-gradient(circle at 48% 92%, rgba(255, 255, 255, 0.22), transparent 18rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.22), transparent 46%),
     var(--sage);
   flex-direction: column;
   overflow: hidden;
   position: relative;
 }
 
-#experience::before {
-  background: rgba(31, 41, 55, 0.08);
+#experience::before,
+#experience::after {
   border-radius: 999px;
   content: "";
-  height: 18rem;
   position: absolute;
+  pointer-events: none;
+}
+
+#experience::before {
+  background: rgba(31, 41, 55, 0.08);
+  height: 18rem;
   right: -5rem;
   top: 4rem;
   width: 18rem;
+}
+
+#experience::after {
+  background: rgba(199, 249, 204, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  bottom: 3rem;
+  height: 10rem;
+  left: -3rem;
+  width: 10rem;
 }
 
 #experience .page-tag,
@@ -341,10 +380,34 @@ a {
 /* Projects */
 #projects {
   background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2), transparent 16rem),
+    radial-gradient(circle at 88% 12%, rgba(31, 41, 55, 0.16), transparent 14rem),
+    radial-gradient(circle at 76% 88%, rgba(199, 249, 204, 0.18), transparent 18rem),
     linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 45%),
     var(--wood);
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
   text-align: center;
+}
+
+#projects::before {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  content: "";
+  height: 22rem;
+  left: -7rem;
+  position: absolute;
+  top: 8rem;
+  width: 22rem;
+}
+
+#projects .page-tag,
+#projects .title-third,
+.projects-grid {
+  position: relative;
+  z-index: 1;
 }
 
 .projects-grid {
@@ -396,7 +459,11 @@ a {
 
 /* Contact */
 #contact {
-  background-color: var(--sage);
+  background:
+    radial-gradient(circle at 16% 28%, rgba(199, 249, 204, 0.32), transparent 14rem),
+    radial-gradient(circle at 82% 78%, rgba(31, 41, 55, 0.14), transparent 16rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent),
+    var(--sage);
   flex-direction: column;
   min-height: 50vh;
 }
