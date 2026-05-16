@@ -356,6 +356,9 @@ a {
 }
 
 .project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 1.2rem;
 }
 
@@ -369,6 +372,26 @@ a {
   color: #555;
   font-size: 0.95rem;
   margin: 0.75rem 0 0;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.project-tags span {
+  background: rgba(150, 167, 141, 0.18);
+  border: 1px solid rgba(49, 92, 43, 0.14);
+  border-radius: 999px;
+  color: #315c2b;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.32rem 0.58rem;
+  text-transform: uppercase;
 }
 
 /* Contact */
