@@ -140,7 +140,10 @@ nav.scrolled {
 
 /* Education bookshelf */
 #education {
-  background: var(--wood);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.2), transparent 16rem),
+    radial-gradient(circle at 86% 78%, rgba(31, 41, 55, 0.2), transparent 18rem),
+    linear-gradient(135deg, #b9976d 0%, var(--wood) 48%, #7a603f 100%);
   flex-direction: column;
   gap: 2rem;
   overflow: visible;

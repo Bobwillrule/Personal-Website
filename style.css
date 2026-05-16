@@ -468,6 +468,29 @@ a {
     var(--sage);
   flex-direction: column;
   min-height: 50vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#contact::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.24) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.22) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(31, 41, 55, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(31, 41, 55, 0.08) 1px, transparent 1px);
+  background-size: 3.25rem 3.25rem, 3.25rem 3.25rem, 0.8125rem 0.8125rem, 0.8125rem 0.8125rem;
+  content: "";
+  inset: 0;
+  opacity: 0.58;
+  pointer-events: none;
+  position: absolute;
+}
+
+#contact .page-tag,
+#contact .title-second,
+#contact-bar {
+  position: relative;
+  z-index: 1;
 }
 
 #contact-bar {
