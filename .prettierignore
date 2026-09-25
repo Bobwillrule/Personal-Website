@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.cache/
+tmp/
+test-results/
+playwright-report/
+package-lock.json

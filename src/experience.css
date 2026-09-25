@@ -1,0 +1,345 @@
+/* Blueprint chapter, based on the user's revised experience reference. */
+.experience-section {
+  background: #0b1623;
+  padding-block: clamp(70px, 6vw, 110px) clamp(64px, 5vw, 96px);
+}
+
+.experience-section::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: min(100%, 33.6vw);
+  background: url('/images/semiconductor-blueprint.webp') center bottom / cover no-repeat;
+  mask-image: linear-gradient(to bottom, transparent, #000 20%);
+  pointer-events: none;
+}
+
+.experience-layout {
+  position: relative;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 2.15fr) minmax(100px, 0.42fr);
+  gap: clamp(24px, 2.4vw, 44px);
+  align-items: start;
+  min-height: 440px;
+}
+
+.experience-layout .chapter-heading {
+  padding-top: 0;
+}
+
+.experience-layout .chapter-heading h2 {
+  font-size: clamp(38px, 3.55vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+}
+
+.experience-accent {
+  color: #a8c2f6;
+}
+
+.experience-layout .chapter-heading > p:not(.eyebrow):not(.handwritten) {
+  max-width: 295px;
+  color: #b9cde1;
+  font-size: clamp(15px, 1.15vw, 20px);
+  line-height: 1.55;
+  margin-top: 20px;
+}
+
+.experience-quote {
+  max-width: 285px;
+  font-size: clamp(23px, 1.65vw, 29px);
+  line-height: 1.18;
+  margin: 36px 0 0 18px;
+  color: #d0deeb;
+  transform: rotate(-7deg);
+}
+
+.experience-quote::after {
+  content: '';
+  display: block;
+  width: 72%;
+  height: 15px;
+  margin: 15px 0 0 20px;
+  border-top: 1px solid #a9bbcf;
+  border-radius: 50%;
+  transform: rotate(-7deg);
+}
+
+.experience-main {
+  min-width: 0;
+  max-width: none;
+  padding-top: 12px;
+}
+
+.experience-card {
+  border: 1px solid #c4d7ec30;
+  border-radius: 14px;
+  padding: clamp(24px, 1.75vw, 34px) clamp(24px, 1.75vw, 34px) 20px;
+  background: linear-gradient(115deg, #283340c9, #303c4bdb);
+  box-shadow:
+    0 18px 48px #00000029,
+    inset 0 1px 0 #ffffff04;
+  backdrop-filter: blur(16px);
+}
+
+.experience-card-top .eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+
+.experience-card-top > svg {
+  width: 22px;
+  height: 22px;
+  color: #adc9ed;
+}
+
+.experience-content {
+  grid-template-columns: 125px minmax(0, 1fr);
+  gap: clamp(20px, 2vw, 36px);
+  margin-top: 25px;
+}
+
+.experience-content h3 {
+  font-size: clamp(26px, 1.85vw, 34px);
+  line-height: 1.2;
+}
+
+.experience-content .tsmc-mark {
+  width: 125px;
+  min-height: 135px;
+}
+
+.experience-content .wafer-grid {
+  width: 94px;
+  height: 94px;
+}
+
+.experience-content .tsmc-mark strong {
+  font-size: 60px;
+  letter-spacing: -4px;
+}
+
+.experience-content .tsmc-rule {
+  width: 96px;
+  bottom: 3px;
+}
+
+.experience-content .company-line {
+  margin-top: 10px;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.experience-content .company-line span {
+  padding-left: 15px;
+  border-left: 1px solid #b9cde14d;
+}
+
+.experience-summary {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-top: 22px;
+  color: #dae1e9;
+}
+
+.experience-card .metrics {
+  margin-top: 28px;
+  padding-block: 22px;
+  background: #101b2829;
+  border: 1px solid #bacde527;
+  border-radius: 10px;
+}
+
+.experience-card .metrics > div {
+  padding-inline: 18px;
+  gap: 9px;
+}
+
+.experience-card .metrics strong {
+  font-size: clamp(30px, 2.3vw, 42px);
+  color: #adc6ff;
+}
+
+.experience-card .metrics span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #e0e7ef;
+}
+
+.experience-details summary {
+  padding: 22px 5px 3px;
+  font-size: 13px;
+  gap: 12px;
+}
+
+.earlier-experience {
+  margin-top: 12px;
+  border-radius: 10px;
+  background: #0b1623cc;
+}
+
+.earlier-experience summary {
+  padding: 12px 15px;
+  font-size: 12px;
+}
+
+.earlier-grid {
+  padding: 14px 20px 24px;
+}
+
+.experience-aside {
+  display: flex;
+  position: relative;
+  justify-self: stretch;
+  padding: 0;
+  min-height: 440px;
+  margin-top: -28px;
+  pointer-events: none;
+}
+
+.experience-aside .handwritten {
+  font-size: clamp(20px, 1.5vw, 27px);
+  line-height: 1.12;
+  color: #b2ccee;
+  transform: rotate(-12deg);
+}
+
+.experience-aside > .handwritten:first-child::after {
+  content: '⤵';
+  display: block;
+  font-family: var(--hand);
+  font-size: 38px;
+  margin-left: 20px;
+}
+
+.experience-aside > p.semiconductor-note {
+  align-self: end;
+  margin: 240px -20px -24px 0;
+  text-align: center;
+  font-size: clamp(20px, 1.5vw, 27px);
+  line-height: 1.12;
+}
+
+@media (max-width: 1200px) {
+  .experience-layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.8fr);
+    gap: 32px;
+  }
+
+  .experience-aside {
+    display: none;
+  }
+
+  .experience-content {
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .experience-content .tsmc-mark {
+    width: 95px;
+  }
+
+  .experience-content .tsmc-mark strong {
+    font-size: 49px;
+  }
+
+  .experience-content .wafer-grid {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .experience-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .experience-layout .chapter-heading h2 {
+    font-size: 48px;
+  }
+
+  .experience-layout .chapter-heading h2 br {
+    display: none;
+  }
+
+  .experience-layout .chapter-heading > p:not(.eyebrow):not(.handwritten) {
+    max-width: 470px;
+  }
+
+  .experience-quote {
+    display: none;
+  }
+
+  .experience-main {
+    grid-column: auto;
+    padding-top: 0;
+  }
+
+  .experience-section::before {
+    height: 100%;
+    background-size: auto 100%;
+    background-position: 72% bottom;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-section {
+    padding-block: 64px;
+  }
+
+  .experience-layout .chapter-heading h2 {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+
+  .experience-layout .chapter-heading h2 br {
+    display: block;
+  }
+
+  .experience-card {
+    padding: 22px 20px 18px;
+    background: linear-gradient(115deg, #24313eef, #293647f0);
+  }
+
+  .experience-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .experience-content .tsmc-mark {
+    min-height: 105px;
+  }
+
+  .experience-content h3 {
+    font-size: 28px;
+  }
+
+  .experience-summary {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .experience-card .metrics {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 18px;
+  }
+
+  .experience-card .metrics > div {
+    padding: 18px 0;
+    gap: 7px;
+  }
+
+  .experience-card .metrics > div + div {
+    border-left: 0;
+    border-top: 1px solid #ffffff1c;
+  }
+
+  .experience-card .metrics strong {
+    font-size: 34px;
+  }
+
+  .experience-card .metrics span {
+    font-size: 12px;
+  }
+}
