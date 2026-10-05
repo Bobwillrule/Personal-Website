@@ -43,6 +43,43 @@ for (const width of [375, 768, 1024, 1440]) {
   });
 }
 
+for (const width of [375, 768, 1440]) {
+  test(`work experience timeline is reachable and readable at ${width}px`, async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    page.on('response', (response) => {
+      if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`);
+    });
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto('./');
+    const opener = page.getByRole('link', { name: 'View all work experience' });
+    await opener.focus();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(/\/Personal-Website\/experience\.html$/);
+    await page.reload();
+    await expect(page).toHaveTitle('All Work Experience | Hugo Chen');
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Learning by doing.');
+    await expect(page.locator('.work-card h2')).toHaveText([
+      'Software Engineer Intern',
+      'Web Developer & Carpenter',
+      'Bike Mechanic',
+    ]);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+    await page.evaluate(() => document.fonts.ready);
+    await page.screenshot({ path: `tmp/screenshots/work-experience-${width}.png`, fullPage: true });
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+      .analyze();
+    expect(results.violations).toEqual([]);
+    expect(errors).toEqual([]);
+    await page.getByRole('link', { name: 'Back to my story' }).click();
+    await expect(page).toHaveURL(/index\.html#experience$/);
+    await expect(page.locator('#experience')).toBeInViewport();
+  });
+}
+
 test('project dialog traps focus, closes on Escape, and restores the opener', async ({ page }) => {
   await page.goto('./');
   const opener = page.getByRole('button', { name: 'View BehindTheETF project details' });
@@ -68,7 +105,7 @@ test('project dialog traps focus, closes on Escape, and restores the opener', as
 
 test('gallery filtering and project details work after a direct page load', async ({ page }) => {
   await page.goto('./projects.html');
-  await expect(page.locator('.gallery-grid .project-card')).toHaveCount(6);
+  await expect(page.locator('.gallery-grid .project-card')).toHaveCount(7);
   await page.getByRole('button', { name: 'AI & Data', exact: true }).click();
   await expect(page.locator('.gallery-grid .project-card')).toHaveCount(1);
   await expect(page.getByRole('heading', { name: 'AI Trader', exact: true })).toBeVisible();
@@ -80,7 +117,18 @@ test('gallery filtering and project details work after a direct page load', asyn
   );
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'All projects', exact: true }).click();
-  await expect(page.locator('.gallery-grid .project-card')).toHaveCount(6);
+  await expect(page.locator('.gallery-grid .project-card')).toHaveCount(7);
+  await page.getByRole('button', { name: 'View Sewage Search project details' }).click();
+  await expect(
+    page.getByRole('dialog').getByRole('heading', { name: 'Sewage Search' }),
+  ).toBeVisible();
+  await expect(page.getByRole('dialog').locator('.eyebrow')).toContainText(
+    'SFU Mountain Madness 2025',
+  );
+  await expect(
+    page.getByRole('dialog').getByRole('link', { name: 'Explore on GitHub' }),
+  ).toHaveCount(0);
+  await page.keyboard.press('Escape');
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.screenshot({ path: 'tmp/screenshots/projects-1440.png', fullPage: true });
 });
@@ -101,6 +149,34 @@ test('mobile menu closes on navigation and Escape; experience details expand', a
   await expect(page.getByText(/Collaborated with nine other interns/)).toBeVisible();
   await page.getByText('Before the code: more of my story', { exact: false }).click();
   await expect(page.getByRole('heading', { name: 'Web Developer & Carpenter' })).toBeVisible();
+});
+
+test('navigation underline follows the section being viewed', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('./');
+  const navigation = page.getByRole('navigation');
+
+  await expect(navigation.getByRole('link', { name: 'Home' })).toHaveAttribute(
+    'aria-current',
+    'location',
+  );
+
+  for (const [section, link] of [
+    ['experience', 'Experience'],
+    ['skills', 'Skills & Education'],
+  ]) {
+    await page.locator(`#${section}`).scrollIntoViewIfNeeded();
+    await expect(navigation.getByRole('link', { name: link })).toHaveAttribute(
+      'aria-current',
+      'location',
+    );
+  }
+
+  await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight }));
+  await expect(navigation.getByRole('link', { name: 'Contact' })).toHaveAttribute(
+    'aria-current',
+    'location',
+  );
 });
 
 test('resume downloads, legacy skills route, and reduced motion remain functional', async ({

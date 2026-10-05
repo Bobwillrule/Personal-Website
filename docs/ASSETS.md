@@ -17,6 +17,11 @@ Replace the relevant file in `public/images` to use personal photography. Preser
 | `public/images/coffee.webp`           | Morning journal card                 | 28,992 bytes  |
 | `public/images/workspace.webp`        | Building journal card                | 54,128 bytes  |
 | `public/images/collaboration.webp`    | Collaboration journal card           | 39,540 bytes  |
+| `public/images/gym.jpg`               | Wake Up & Gym journal card            | 107,862 bytes |
+| `public/images/projects-leetcode.png` | User-supplied Projects & LeetCode card | 434,833 bytes |
+| `public/images/dinner.jpg`            | User-supplied Cook Dinner photo        | 83,487 bytes  |
+| `public/images/gaming-friends.jpg`    | User-supplied Valorant journal card   | 81,611 bytes  |
+| `public/images/sleep.jpg`             | Sleep journal card                    | 85,191 bytes  |
 
 ### Generation prompts
 
@@ -56,11 +61,30 @@ The new hero uses real HTML for its heading, handwritten annotation, links, and 
 
 > Editorial lifestyle photo, landscape 4:3. Three diverse university students in their early twenties collaborating around a laptop in a bright modern campus library, candid side angle, warm natural sunlight, muted tones, attentive friendly mood. Laptop screen indistinct. Realistic photography, no branding, no words, no logos. Generic illustrative scene for a portfolio teamwork card.
 
+**Updated day-in-the-life cards** (2026-09-26; built-in image-generation tool; optimized to 900 × 600 JPEG):
+
+- **Gym:** Early-morning modern university gym with shoes, water bottle, towel, dumbbells, and a workout bench; refined candid editorial photography, muted navy and neutral palette, no people, text, or logos.
+- **Sleep:** A tidy student bedroom ready for sleep with a made bed, closed laptop, warm bedside lamp, and cool city light; calm editorial interior photography, no people, text, or logos.
+
+**Cook Dinner card** (2026-09-26; user-supplied photo edited with the built-in image-generation tool; saved as `public/images/dinner.jpg`, 900 × 600, 83,487 bytes):
+
+> Use case: precise-object-edit. Asset type: 3:2 landscape journal-card photograph for a personal portfolio. Image 1 is the edit target and must remain recognizably the same real dinner photo. Professionally touch up Image 1 for the Cook Dinner card. Crop to a balanced 3:2 landscape composition centered on both plated beef Wellington dinners, with the right plate remaining the primary focal point. Correct the warm color cast, lift dim midtones, recover plate highlights, add gentle natural contrast and subtle sharpness so the food looks appetizing but still real. Reduce only minor visual distractions at the extreme top edge and make the counter look clean and natural. Preserve the exact two plates, plate patterns, beef Wellington portions, doneness, mashed potatoes, asparagus, sauce placement, kitchen counter, camera angle, and real homemade character. Do not redesign, replace, add, remove, or rearrange any food; do not invent garnish; no text; no watermark; avoid glossy restaurant-ad styling or heavy retouching.
+
+**Valorant card** (2026-09-26; user-supplied image): `public/images/gaming-friends.jpg` is a centered 720 × 480 crop of the supplied competitive Valorant screenshot. The crop preserves the “MY ACE IN COMP” caption and five-player combat report while matching the journal card’s 3:2 aspect ratio.
+
+**Projects & LeetCode card** (2026-10-05; user-supplied image): `public/images/projects-leetcode.png` is an unchanged 2876 × 1800 copy of the supplied LeetCode screenshot. The site displays it with the journal card's existing responsive crop.
+
 ## Existing repository assets
 
-The original `Images` directory remains intact. Optimized copies in `public/images` use the existing UBC campus photo, Whistler photo, CAD table image, calculator screenshot, tracker screenshot, and game image. The calculator/tracker/game copies are available for later screenshot-based covers; the current homepage uses cover illustrations built with CSS/SVG. Those illustrations are identified in the project dialogs and make no claim to show measured financial performance.
+The original `Images` directory remains intact. Optimized copies in `public/images` use the existing UBC campus photo, Whistler photo, CAD table image, calculator screenshot, tracker screenshot, and game image. `public/images/game.webp` is the Sewage Search gallery cover; the other software covers use CSS/SVG illustrations. Those illustrations are identified in the project dialogs and make no claim to show measured financial performance.
 
-The TSMC wordmark treatment and UBC badge are code-drawn approximations for the local design, not official supplied logo assets. Replace with suitable official assets during final branding review if desired.
+`public/images/ubc-emblem.png` is an optimized 211 × 288 copy of the transparent UBC emblem supplied by the user on 2026-09-26. It replaces the earlier code-drawn badge in the education section.
+
+`public/images/tsmc-logo-supplied.png` is the current logo used on both TSMC cards: an exact copy of the user's replacement image supplied on 2026-09-27 (1544 × 1215). Verified RGBA with transparent outer pixels; no image edits applied. Display dimensions preserve its natural aspect ratio and the established responsive sizing.
+
+Earlier assets remain for provenance: `public/images/tsmc-logo.png` is the initial 768 × 768 supplied image with a painted checkerboard; `public/images/tsmc-logo-transparent.png` is the superseded 561 × 443 extracted cutout.
+
+Two built-in image-editing attempts requested: “Remove the checkerboard completely, replace it with genuine alpha transparency, preserve the red tsmc lettering, underline, black grid, and white wafer interior, and crop tightly.” Both returned RGB files with painted checkerboards and were rejected. The final asset instead uses deterministic background extraction from the original: remove only pale neutral pixels connected to the outside edge, preserving the enclosed wafer interior. Actual alpha transparency was verified before integration.
 
 ## Documents
 
@@ -71,6 +95,6 @@ The TSMC wordmark treatment and UBC badge are code-drawn approximations for the 
 
 - The resume is authoritative for education, TSMC experience, AI Trader, BehindTheETF, and Financial Tracker.
 - Public GitHub repository names and the original Unit Calculator's Kotlin language were checked through the GitHub API on 2026-09-22. Later Unit Calculator versions remain separate repositories.
-- The daily cards are editorial themes; no exact daily routine, gym/badminton habit, or interview schedule is claimed.
-- Availability uses “Let's build something” until an internship date is confirmed.
+- The daily-card activities were supplied by the user on 2026-09-26. Their order is representative and does not claim exact times.
+- All pages share the homepage navigation with LinkedIn, GitHub, and email icons; no availability badge is displayed.
 - Typography: DM Sans, DM Serif Display, and Caveat, bundled locally through their Fontsource packages (SIL Open Font License; licenses are included in installed packages).

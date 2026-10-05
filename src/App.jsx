@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { links, moments, projects, toolboxes } from './content.js';
+import { links, moments, projects, toolboxes, workExperience } from './content.js';
 
-const image = (name) => `./images/${name}.webp`;
+const image = (name) => `./images/${name.includes('.') ? name : `${name}.webp`}`;
 
 function Icon({ name, size = 20, className = '' }) {
   const paths = {
@@ -109,13 +109,44 @@ function Brand({ home = false }) {
 function Navigation({ gallery }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const toggle = useRef(null);
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 24);
+    let frame;
+    const update = () => {
+      setScrolled(window.scrollY > 24);
+
+      if (!gallery) {
+        const sectionIds = ['home', 'about', 'experience', 'skills', 'contact'];
+        const threshold = window.innerHeight * 0.32;
+        let current = sectionIds[0];
+
+        sectionIds.forEach((id) => {
+          const section = document.getElementById(id);
+          if (section && section.getBoundingClientRect().top <= threshold) current = id;
+        });
+
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+          current = 'contact';
+        }
+
+        setActiveSection(current);
+      }
+    };
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+
     update();
-    window.addEventListener('scroll', update, { passive: true });
-    return () => window.removeEventListener('scroll', update);
-  }, []);
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+    };
+  }, [gallery]);
   useEffect(() => {
     const onKey = (event) => {
       if (event.key === 'Escape' && open) {
@@ -136,7 +167,7 @@ function Navigation({ gallery }) {
   const home = (hash) => (gallery ? `./index.html${hash}` : hash);
   return (
     <header
-      className={`site-header ${!gallery ? 'home-header' : ''} ${scrolled || gallery ? 'is-solid' : ''} ${open ? 'menu-open' : ''}`}
+      className={`site-header home-header ${scrolled || gallery ? 'is-solid' : ''} ${open ? 'menu-open' : ''}`}
     >
       <div className="header-inner wrap">
         <Brand home={!gallery} />
@@ -146,37 +177,23 @@ function Navigation({ gallery }) {
           aria-label="Main navigation"
         >
           {[
-            ['Home', home('#home')],
-            ['About', home('#about')],
-            ['Projects', gallery ? './projects.html' : '#projects'],
-            ['Experience', home('#experience')],
-            ['Journal', home('#journal')],
-          ].map(([label, href]) => (
+            ['Home', 'home'],
+            ['About', 'about'],
+            ['Experience', 'experience'],
+            ['Skills & Education', 'skills'],
+            ['Contact', 'contact'],
+          ].map(([label, section]) => (
             <a
               key={label}
-              href={href}
-              aria-current={
-                (gallery && label === 'Projects') || (!gallery && !scrolled && label === 'Home')
-                  ? 'page'
-                  : undefined
-              }
+              href={home(`#${section}`)}
+              aria-current={!gallery && activeSection === section ? 'location' : undefined}
               onClick={() => setOpen(false)}
             >
               {label}
             </a>
           ))}
         </nav>
-        {gallery ? (
-          <a href={home('#contact')} className="availability">
-            <span className="status-dot" />
-            Let’s build something
-            <span className="availability-arrow">
-              <Icon name="arrow" size={17} />
-            </span>
-          </a>
-        ) : (
-          <SocialLinks />
-        )}
+        <SocialLinks />
         <button
           ref={toggle}
           className="menu-toggle"
@@ -214,16 +231,17 @@ function Hero() {
       <div className="wrap intro-layout">
         <div className="intro-copy">
           <p className="eyebrow intro-eyebrow">
-            Engineering student <span>·</span> Problem solver <span>·</span> Lifelong learner
+            Engineering student <span>·</span> Software Developer <span>·</span> Taiwanese &
+            Canadian
           </p>
           <h1 id="hero-heading">
             Hi, I’m <span>Hugo Chen.</span>
           </h1>
           <p className="intro-description">
             I’m an Electrical Engineering student at the University of British Columbia with a minor
-            in Computer Science. I enjoy building practical software, exploring ideas at the
-            intersection of hardware, software, and AI, and turning complex problems into scalable
-            solutions.
+            in Computer Science. I enjoy building software that can make mine and others&apos; lives
+            easier. I’m interested in working across the stack, from hardware and low-level systems
+            to full-stack software and AI.
           </p>
           <div className="intro-actions">
             <a className="button button-dark" href={links.resume} target="_blank" rel="noreferrer">
@@ -247,20 +265,15 @@ function Hero() {
             alt="Blue-gray ink illustration of Vancouver’s waterfront, evergreen trees, and mountains"
           />
           <p className="handwritten intro-note" aria-hidden="true">
-            <span>“</span>Same
-            <br />
-            curiosity.
-            <br />A different
-            <br />
-            day!
           </p>
           <a className="intro-location" href="#contact">
             <Icon name="pin" size={20} />
             <div>
               <strong>Vancouver, BC</strong>
               <p>
-                Mountains, ocean, and
-                <br />a city full of ideas.
+                Well, technically I&apos;m from
+                <br />
+                Coquitlam, BC
               </p>
             </div>
           </a>
@@ -294,11 +307,7 @@ function DayInLife() {
           }
         >
           <Icon name="sun" className="day-sun" size={27} />
-          <p>
-            Different moments.
-            <br /> Same mission — to learn,
-            <br /> build, and make an impact.
-          </p>
+          <p>My fun daily 9-5 routine. Of course I go out on the weekends too :)</p>
         </ChapterHeading>
         <div id="journal" className="day-story">
           <svg
@@ -330,9 +339,9 @@ function DayInLife() {
         <aside className="day-aside" aria-hidden="true">
           <Icon name="moon" size={24} />
           <p className="handwritten">
-            Little things.
-            <br /> Bigger
-            <br /> possibilities.
+            The day,
+            <br /> Repeats
+            <br /> Again
           </p>
           <span className="sketch-arrow">⤴</span>
         </aside>
@@ -349,33 +358,42 @@ function Experience() {
           number="2"
           title={
             <>
-              Experience
-              <br /> <span className="experience-accent">Real Impact.</span>
+              My work
+              <br /> <span className="experience-accent">Experience</span>
             </>
           }
         >
           <p>
-            Turning complex problems
-            <br /> into practical solutions at scale.
+            Building solutions that
+            <br /> matter in the real world.
           </p>
           <p className="handwritten experience-quote">
-            “Technology means more
-            <br /> when it solves real problems
-            <br /> for real people.”
+            I am always looking for
+            <br /> the next opportunity
+            <br /> to work and learn.
           </p>
         </ChapterHeading>
         <div className="experience-main">
           <article className="experience-card">
             <div className="experience-card-top">
               <span className="eyebrow">JUL — SEP 2026</span>
-              <Icon name="northeast" size={17} />
+              <a
+                href="./experience.html"
+                className="experience-page-link"
+                aria-label="View all work experience"
+                title="View all work experience"
+              >
+                <Icon name="northeast" size={22} />
+              </a>
             </div>
             <div className="experience-content">
-              <div className="tsmc-mark" aria-label="TSMC">
-                <span className="wafer-grid" />
-                <strong>tsmc</strong>
-                <span className="tsmc-rule" />
-              </div>
+              <img
+                className="tsmc-logo"
+                src={image('tsmc-logo-supplied.png')}
+                width="1544"
+                height="1215"
+                alt="TSMC logo"
+              />
               <div>
                 <h3>Software Engineer Intern</h3>
                 <p className="company-line">
@@ -421,7 +439,7 @@ function Experience() {
           </article>
           <details className="earlier-experience">
             <summary>
-              Before the code: more of my story <span>+</span>
+              More of my experiences <span>+</span>
             </summary>
             <div className="earlier-grid">
               <article>
@@ -451,139 +469,14 @@ function Experience() {
             <br /> power a<br /> bigger world.
           </p>
           <p className="handwritten semiconductor-note">
-            Semiconductors
-            <br /> connect people,
-            <br /> ideas, and a
-            <br /> brighter tomorrow.
+            My advantage are my
+            <br /> adaptibility,
+            <br /> fast decision making,
+            <br /> and positivity.
           </p>
         </aside>
       </div>
     </section>
-  );
-}
-
-function ProjectVisual({ kind }) {
-  if (kind === 'table' || kind === 'portfolio')
-    return (
-      <div className={`project-visual visual-${kind}`} aria-hidden="true">
-        <img src={image(kind === 'table' ? 'table' : 'hero')} loading="lazy" alt="" />
-        {kind === 'portfolio' && (
-          <span className="mini-portfolio-title">
-            Building
-            <br /> a brighter tomorrow.
-          </span>
-        )}
-      </div>
-    );
-  if (kind === 'calculator')
-    return (
-      <div className="project-visual visual-calculator" aria-hidden="true">
-        <span className="unit-ornament">cm / in</span>
-        <div className="phone">
-          <div className="phone-speaker" />
-          <div className="phone-title">Unit Calculator</div>
-          <div className="phone-display">
-            12cm + 5mm<span>0.125 m</span>
-          </div>
-          <div className="phone-keys">
-            {[
-              'C',
-              '()',
-              '%',
-              '÷',
-              '7',
-              '8',
-              '9',
-              '×',
-              '4',
-              '5',
-              '6',
-              '−',
-              '1',
-              '2',
-              '3',
-              '+',
-              '±',
-              '0',
-              '.',
-              '=',
-            ].map((key, i) => (
-              <span key={key} className={i % 4 === 3 ? 'key-accent' : ''}>
-                {key}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  if (kind === 'trader')
-    return (
-      <div className="project-visual visual-trader" aria-hidden="true">
-        <div className="trader-panel">
-          <div className="mini-label">
-            <span className="tiny-dot" /> AI TRADER <span>↗</span>
-          </div>
-          <p>Learn. Test. Improve.</p>
-          <div className="trader-row">
-            Training environment <span>DQN</span>
-          </div>
-          <div className="trader-row">
-            Policy evaluation <span>↗</span>
-          </div>
-          <div className="trader-row">
-            Risk & performance <span>⌁</span>
-          </div>
-          <div className="mini-progress">
-            <i />
-          </div>
-        </div>
-      </div>
-    );
-  if (kind === 'finance')
-    return (
-      <div className="project-visual visual-finance" aria-hidden="true">
-        <div className="finance-orbit">
-          <Icon name="layers" size={35} />
-        </div>
-        <div className="finance-preview">
-          <span>INCOME & EXPENSES</span>
-          <div className="bar-chart">
-            {[36, 57, 45, 72, 55, 85, 66, 93, 73, 90].map((h, i) => (
-              <i key={i} style={{ height: `${h}%` }} />
-            ))}
-          </div>
-          <div className="mini-finance-labels">
-            <span>Track.</span>
-            <span>Understand.</span>
-          </div>
-        </div>
-      </div>
-    );
-  return (
-    <div className="project-visual visual-etf" aria-hidden="true">
-      <div className="etf-dashboard">
-        <div className="mini-label">
-          BehindTheETF <span>EXPOSURE EXPLORER</span>
-        </div>
-        <div className="etf-caption">
-          A clearer view.<span>Every layer.</span>
-        </div>
-        <div className="chart-grid">
-          <svg viewBox="0 0 260 75" preserveAspectRatio="none">
-            <path
-              className="chart-area"
-              d="M0 64 15 56 26 61 42 42 58 49 68 31 81 39 96 24 111 34 126 15 139 30 157 24 175 35 186 22 200 15 215 27 235 8 249 13 260 0V75H0Z"
-            />
-            <path d="M0 64 15 56 26 61 42 42 58 49 68 31 81 39 96 24 111 34 126 15 139 30 157 24 175 35 186 22 200 15 215 27 235 8 249 13 260 0" />
-          </svg>
-        </div>
-        <div className="etf-bottom">
-          <span>Holdings</span>
-          <span>Sectors</span>
-          <span>Overlap</span>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -595,7 +488,6 @@ function ProjectCard({ project, onSelect }) {
         onClick={() => onSelect(project)}
         aria-label={`View ${project.title} project details`}
       >
-        <ProjectVisual kind={project.visual} />
         <span className="project-arrow">
           <Icon name="northeast" size={15} />
         </span>
@@ -627,8 +519,8 @@ function FeaturedProjects({ onSelect }) {
           }
         >
           <p>
-            Ideas that blend software,
-            <br /> hardware, and real-world impact.
+            Ideas that solve everyday
+            <br /> issues and lifestyles.
           </p>
           <a href="./projects.html" className="button button-outline">
             View All Projects <Icon name="arrow" size={16} />
@@ -657,9 +549,7 @@ function Skills() {
           }
         >
           <p>
-            A strong foundation.
-            <br /> A curious mindset.
-            <br /> A long way to go.
+            My foundations that I built up.
           </p>
         </ChapterHeading>
         <div className="toolbox">
@@ -683,12 +573,13 @@ function Skills() {
         <div className="education">
           <h3 className="serif-subtitle">Education</h3>
           <div className="education-content">
-            <div className="ubc-badge" aria-hidden="true">
-              <strong>UBC</strong>
-              <span>
-                〰<br /> 〰<br /> 〰
-              </span>
-            </div>
+            <img
+              className="ubc-emblem"
+              src="./images/ubc-emblem.png"
+              width="211"
+              height="288"
+              alt="UBC emblem"
+            />
             <div>
               <h4>The University of British Columbia</h4>
               <p>
@@ -716,15 +607,14 @@ function Contact({ gallery }) {
             number="5"
             title={
               <>
-                Let’s Build
-                <br /> What’s Next.
+                Let&apos;s Build
+                <br /> Things Together.
               </>
             }
           />
           <p className="contact-intro">
-            Whether it’s an opportunity, a project idea,
-            <br className="desktop-break" /> or just a great conversation, I’d love to hear from
-            you.
+            Feel free to reach out to me, regardless if this is a job opportunity,
+            <br className="desktop-break" /> a colloraboration, or just a great conversation!
           </p>
           <div className="contact-links">
             <a href={links.linkedin} target="_blank" rel="noreferrer">
@@ -750,8 +640,7 @@ function Contact({ gallery }) {
             </a>
           </div>
           <p className="handwritten contact-note" aria-hidden="true">
-            Same person.
-            <br /> Bigger things ahead.
+            Let&apos;s talk!
           </p>
         </div>
       </section>
@@ -762,8 +651,8 @@ function Contact({ gallery }) {
             Electrical Engineering at UBC<span>·</span>Minor in Computer Science<span>·</span>
             Vancouver, BC
           </p>
-          <a href={gallery ? './index.html#home' : '#home'}>
-            Build · Learn · Grow · Make an Impact <Icon name="arrow" size={16} />
+          <a href={links.websiteSource} target="_blank" rel="noreferrer">
+            Website source code <Icon name="northeast" size={16} />
           </a>
         </div>
       </footer>
@@ -820,7 +709,6 @@ function ProjectDialog({ project, onClose }) {
           >
             <Icon name="close" />
           </button>
-          <ProjectVisual kind={project.visual} />
           <div className="dialog-body">
             <p className="eyebrow">
               {project.category} <span> / </span> {project.date}
@@ -838,12 +726,16 @@ function ProjectDialog({ project, onClose }) {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            <a className="button button-dark" href={project.href} target="_blank" rel="noreferrer">
-              {project.linkLabel || 'Explore on GitHub'}
-              <Icon name="northeast" size={16} />
-            </a>
-            {['etf', 'trader', 'calculator', 'finance'].includes(project.visual) && (
-              <p className="visual-caption">Cover illustration inspired by the project.</p>
+            {project.href && (
+              <a
+                className="button button-dark"
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {project.linkLabel || 'Explore on GitHub'}
+                <Icon name="northeast" size={16} />
+              </a>
             )}
           </div>
         </div>
@@ -903,18 +795,122 @@ function ProjectGallery({ onSelect }) {
   );
 }
 
+function WorkExperience() {
+  return (
+    <section className="gallery-section work-section wrap" aria-labelledby="work-heading">
+      <a href="./index.html#experience" className="back-link">
+        <Icon name="arrow" size={16} /> Back to my story
+      </a>
+      <p className="eyebrow">ALL WORK EXPERIENCE</p>
+      <div className="gallery-heading">
+        <h1 id="work-heading">
+          Learning by
+          <br /> <em>doing.</em>
+        </h1>
+        <p>
+          From hands-on work to software at scale.
+          <br />A timeline of the teams, challenges,
+          <br />
+          and work that have shaped me.
+        </p>
+        <span className="handwritten" aria-hidden="true">
+          Different roles.
+          <br /> Same curiosity. ↗
+        </span>
+      </div>
+      <div className="work-timeline-intro">
+        <span>THE JOURNEY SO FAR</span>
+        <span>Most recent first</span>
+      </div>
+      <ol className="work-timeline" aria-label="Work experience, most recent first">
+        {workExperience.map((job, index) => (
+          <li className="work-timeline-entry" key={job.id}>
+            <div className="work-date">
+              <span>{job.date}</span>
+              <span className="work-location">
+                <Icon name="pin" size={14} />
+                {job.location}
+              </span>
+            </div>
+            <article
+              className={`work-card ${index === 0 ? 'work-card-featured' : ''}`}
+              aria-labelledby={`${job.id}-title`}
+            >
+              <div className="work-card-heading">
+                <div className="work-company">
+                  {job.id === 'tsmc' && (
+                    <img
+                      className="tsmc-logo"
+                      src={image('tsmc-logo-supplied.png')}
+                      width="1544"
+                      height="1215"
+                      alt="TSMC logo"
+                    />
+                  )}
+                  <p className="eyebrow">{job.company}</p>
+                </div>
+                <span className="work-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
+              </div>
+              <h2 id={`${job.id}-title`}>{job.title}</h2>
+              <p className="work-summary">{job.summary}</p>
+              <ul className="work-details">
+                {job.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+              <div className="tags">
+                {job.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+            </article>
+          </li>
+        ))}
+      </ol>
+      <div className="work-timeline-outro">
+        <p className="handwritten">On to the next chapter.</p>
+        <a className="button button-outline" href={links.resume} target="_blank" rel="noreferrer">
+          View Resume <Icon name="northeast" size={16} />
+        </a>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
   const gallery = window.location.pathname.endsWith('/projects.html');
+  const experiencePage = window.location.pathname.endsWith('/experience.html');
+  const secondaryPage = gallery || experiencePage;
   const [selectedProject, setSelectedProject] = useState(null);
+  useEffect(() => {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (!target) return;
+    let cancelled = false;
+    const scrollToSection = async () => {
+      await document.fonts.ready;
+      if (!cancelled) target.scrollIntoView({ behavior: 'instant' });
+    };
+    // Cross-page anchors must wait for React and the page layout to be ready.
+    if (document.readyState === 'complete') scrollToSection();
+    else window.addEventListener('load', scrollToSection, { once: true });
+    return () => {
+      cancelled = true;
+      window.removeEventListener('load', scrollToSection);
+    };
+  }, []);
   return (
     <>
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
-      <Navigation gallery={gallery} />
+      <Navigation gallery={secondaryPage} />
       <main id="main-content">
         {gallery ? (
           <ProjectGallery onSelect={setSelectedProject} />
+        ) : experiencePage ? (
+          <WorkExperience />
         ) : (
           <>
             <Hero />
@@ -925,7 +921,7 @@ export default function App() {
           </>
         )}
       </main>
-      <Contact gallery={gallery} />
+      <Contact gallery={secondaryPage} />
       <ProjectDialog project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
   );

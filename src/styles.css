@@ -864,9 +864,9 @@ summary {
   height: 23px;
   display: grid;
   place-items: center;
-  border: 1px solid #ffffff3b;
-  background: #ffffff14;
-  color: white;
+  border: 1px solid #cbd5e4;
+  background: #eef3fb;
+  color: #243d64;
   border-radius: 50%;
 }
 .project-card-copy {
@@ -880,6 +880,7 @@ summary {
   line-height: 1.3;
   font-weight: 600;
   margin-top: 10px;
+  padding-right: 34px;
   letter-spacing: -0.3px;
 }
 .project-card p {
@@ -1172,6 +1173,27 @@ summary {
   font-size: 5px;
   color: #84a3bc;
 }
+.visual-game img {
+  object-position: center;
+  filter: saturate(0.92) contrast(1.04);
+}
+.visual-game::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #07131b0d 25%, #07131bbd 100%);
+}
+.game-title {
+  position: absolute;
+  z-index: 1;
+  right: 14px;
+  bottom: 11px;
+  left: 14px;
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
 .visual-table img {
   object-position: center 60%;
 }
@@ -1280,29 +1302,11 @@ summary {
   font-size: 10px;
   color: #526174;
 }
-.ubc-badge {
-  width: 38px;
+.ubc-emblem {
+  width: 52px;
+  height: auto;
   flex-shrink: 0;
-  height: 60px;
-  color: #fff;
-  background: #0b2440;
-  border: 2px solid #0b2440;
-  box-shadow: inset 0 0 0 2px white;
-  border-radius: 0 0 45% 45%;
-  padding: 4px 4px 0;
-  text-align: center;
-}
-.ubc-badge strong {
-  display: block;
-  font-family: Georgia, serif;
-  font-size: 14px;
-  border-bottom: 1px solid white;
-}
-.ubc-badge span {
-  display: block;
-  font-size: 18px;
-  line-height: 0.52;
-  margin-top: 6px;
+  object-fit: contain;
 }
 
 /* Chapter five: leave the door open. */
@@ -1505,7 +1509,7 @@ summary {
   font-size: 8px;
 }
 .dialog-body {
-  padding: 27px 32px 30px;
+  padding: 56px 32px 30px;
 }
 .dialog-body .eyebrow {
   color: #5b6c82;
@@ -1539,12 +1543,6 @@ summary {
   margin-top: 22px;
   font-size: 12px;
 }
-.visual-caption {
-  margin-top: 13px;
-  font-size: 10px;
-  color: #626d7b;
-}
-
 /* The project index shares the visual language of the homepage. */
 .gallery-section {
   padding-block: 110px 80px;

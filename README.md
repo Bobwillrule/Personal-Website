@@ -38,13 +38,15 @@ npm test
 
 The browser suite uses installed Google Chrome and starts a production preview under `/Personal-Website/`, checking the actual GitHub Pages path behavior. Set `PLAYWRIGHT_CHANNEL=msedge` to use installed Edge instead. No browser download is needed on a machine with either supported browser installed.
 
-The nine checks cover layouts at 375, 768, 1024, and 1440 pixels; image loading and horizontal overflow; JavaScript errors; mobile navigation; project-dialog focus, Escape, and focus restoration; project filters; PDF download; the legacy skills URL; reduced motion; and automated WCAG A/AA accessibility checks using axe. The suite saves desktop/mobile screenshots under `tmp/screenshots/`.
+The browser checks cover layouts at 375, 768, 1024, and 1440 pixels; image loading and horizontal overflow; JavaScript errors; mobile navigation; project-dialog focus, Escape, and focus restoration; project filters; PDF download; the legacy skills URL; reduced motion; and automated WCAG A/AA accessibility checks using axe. The work-experience timeline is also checked at mobile, tablet, and desktop sizes, including keyboard navigation from the Chapter Two arrow and direct page reloads. The suite saves screenshots under `tmp/screenshots/`.
 
 `npm run format` formats the authored files. The production output is `dist/`; `npm run preview` serves it locally.
 
 ## Edit content
 
 The TSMC chapter follows the user's dark blueprint reference, with a blue-accented heading, glass-style card, and three bordered metrics. Its content and disclosures remain resume-based; on phones, the card and metrics stack vertically. The generated background is conceptual architectural artwork.
+
+The arrow on the TSMC card opens `experience.html`: a newest-first vertical timeline of all three resume roles, with shared gallery typography, navigation, and footer. Dates, details, and tags are maintained in `workExperience` in `src/content.js`; timeline styles live in `src/experience.css`.
 
 | File                                    | Purpose                                                            |
 | --------------------------------------- | ------------------------------------------------------------------ |
@@ -58,6 +60,7 @@ The TSMC chapter follows the user's dark blueprint reference, with a blue-accent
 | `public/images/`                        | Optimized scenic and project assets                                |
 | `public/documents/Hugo-Chen-Resume.pdf` | Supplied resume, linked consistently throughout the site           |
 | `projects.html`                         | Directly loadable project gallery entry                            |
+| `experience.html`                       | Directly loadable work-experience timeline entry                    |
 | `skills.html`                           | Redirect for the old skills URL                                    |
 | `docs/ASSETS.md`                        | Image provenance, generation prompts, and replacement guidance     |
 | `docs/REDESIGN_PLAN.md`                 | Design direction and content decisions                             |

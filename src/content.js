@@ -1,53 +1,57 @@
 export const links = {
   github: 'https://github.com/Bobwillrule',
+  websiteSource: 'https://github.com/Bobwillrule/Personal-Website',
   linkedin: 'https://www.linkedin.com/in/hugochen07/',
   email: 'mailto:hugohqchen@gmail.com',
   resume: './documents/Hugo-Chen-Resume.pdf',
 };
 
-// Editorial themes, not a claim of a fixed daily schedule.
+// User-confirmed activities, presented without claiming exact times.
 export const moments = [
   {
-    time: 'Morning',
-    title: 'Coffee & Curiosity',
-    description: 'A little space to think. A new question to explore.',
-    image: 'coffee',
-    alt: 'Coffee and a notebook in warm morning light',
+    time: 'Start the day',
+    title: 'Wake Up & Gym',
+    description: 'Even though I hate waking up and leg day, I still do them anyways.',
+    image: 'gym.jpg',
+    alt: 'Gym shoes, a water bottle, towel, and dumbbells in morning light',
   },
   {
     time: 'On campus',
     title: 'Classes & Labs',
-    description: 'Electrical engineering, CS, and hands-on learning at UBC.',
+    description: 'Electrical engineering & computer science. My favourite class was discrete math.',
     image: 'campus',
     alt: 'A tree-lined building on the UBC campus',
   },
   {
-    time: 'In the zone',
-    title: 'Building Projects',
-    description: 'Turning a what-if into something that works.',
-    image: 'workspace',
-    alt: 'A laptop and notebook on a sunlit desk',
+    time: 'Focused time',
+    title: 'Projects & LeetCode',
+    description: 'Neetcode 250, Typing code and Codex Prompting. I love trees in leetcode',
+    image: 'projects-leetcode.png',
+    alt: 'LeetCode Swim in Rising Water problem beside a Python disjoint-set solution',
   },
   {
-    time: 'Better together',
-    title: 'Team Collaboration',
-    description: 'Sharing ideas. Working through the hard parts together.',
-    image: 'collaboration',
-    alt: 'Illustrative scene of students collaborating around a laptop',
+    time: 'Dinner time',
+    title: 'Cook Dinner',
+    description:
+      'I usually make asian, but this beef wellington for my anniversary was exceptional',
+    image: 'dinner.jpg',
+    alt: 'Two plates of beef Wellington with mashed potatoes and asparagus',
   },
   {
-    time: 'A little perspective',
-    title: 'Beyond the Screen',
-    description: 'A reminder that there’s a bigger world outside the code.',
-    image: 'mountains',
-    alt: 'Mountains and a gondola above the trees at Whistler',
+    time: 'Time to unwind',
+    title: 'Relax & Friends',
+    description:
+      "Relax, read, hangout with friends. I'm hardstuck silver but let me know if you want to queue.",
+    image: 'gaming-friends.jpg',
+    alt: 'Valorant combat report showing an ace in competitive play',
   },
   {
-    time: 'After hours',
-    title: 'Make Something',
-    description: 'From a few lines of code to a table built from scratch.',
-    image: 'table',
-    alt: 'CAD model of a custom sliding coffee table',
+    time: 'End of the day',
+    title: 'Sleep',
+    description:
+      'I value my rest greatly (at least 8 hours), so I am energized to do what I need to do tomorrow.',
+    image: 'sleep.jpg',
+    alt: 'A calm bedroom at night with a warm bedside lamp and city lights',
   },
 ];
 
@@ -152,6 +156,70 @@ export const projects = [
       'A static production build compatible with GitHub Pages.',
     ],
     href: 'https://github.com/Bobwillrule/Personal-Website',
+  },
+  {
+    id: 'sewage-search',
+    title: 'Sewage Search',
+    category: 'Software',
+    visual: 'game',
+    description: 'Descend into a surreal sewer and search for a lost cat.',
+    tags: ['Python', 'Pygame', 'Hackathon'],
+    date: 'SFU Mountain Madness 2025',
+    summary:
+      'A 2D game created for SFU Mountain Madness 2025, where players explore a surreal sewer to rescue a lost cat.',
+    details: [
+      'Built as a hackathon game using Python and Pygame.',
+      'Uses a sewer-themed 2D world as the setting for the search.',
+      'Challenges the player to descend underground and find the missing cat.',
+    ],
+  },
+];
+
+// Professional facts and dates from public/documents/Hugo-Chen-Resume.pdf.
+export const workExperience = [
+  {
+    id: 'tsmc',
+    company: 'TSMC',
+    title: 'Software Engineer Intern',
+    date: 'July — September 2026',
+    location: 'Hsinchu, Taiwan',
+    summary:
+      'Building AI tools that help engineers connect machine failures to the code behind them.',
+    details: [
+      'Built an AI assistant to analyze logs from 60,000+ semiconductor machines and correlate failures with relevant codebases for root-cause analysis.',
+      'Collaborated with nine other interns on an OpenHarness-based multi-agent system with custom MCP servers, tools, skills, and retrieval pipelines.',
+      'Reduced end-to-end agent execution time by 40% with a React, FastAPI, Python, and MongoDB platform that replaced the CLI-based process and agent loop.',
+      'Implemented Azure DevOps CI/CD pipelines for containerized services using Docker and Kubernetes, deploying to an internal testing environment with 200 engineers in scope.',
+    ],
+    tags: ['React', 'FastAPI', 'Python', 'MongoDB', 'Docker', 'Kubernetes', 'Azure DevOps'],
+  },
+  {
+    id: 'linty-constructions',
+    company: 'Linty Constructions',
+    title: 'Web Developer & Carpenter',
+    date: 'June 2023 — October 2024',
+    location: 'Vancouver, BC',
+    summary:
+      'Building an online presence, custom homes, and clearer communication on the job site.',
+    details: [
+      'Created a company website that generated three new client leads in two months.',
+      'Framed four custom residential homes while adapting to fast-paced outdoor job site conditions.',
+      'Acted as the English–Mandarin liaison between clients and contractors to reduce miscommunication.',
+    ],
+    tags: ['Web Development', 'Carpentry', 'Client Communication', 'English & Mandarin'],
+  },
+  {
+    id: 'canadian-tire',
+    company: 'Canadian Tire',
+    title: 'Bike Mechanic',
+    date: 'June 2022 — June 2023',
+    location: 'Coquitlam, BC',
+    summary: 'Solving hands-on problems and helping people find the right bike.',
+    details: [
+      'Maintained the store’s lowest bike rework and return rates through systematic inspection and tuning.',
+      'Advised customers on bike selection and achieved the store’s top monthly bike sales.',
+    ],
+    tags: ['Bike Maintenance', 'Quality Assurance', 'Customer Service'],
   },
 ];
 

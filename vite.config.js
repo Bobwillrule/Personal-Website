@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         projects: fileURLToPath(new URL('./projects.html', import.meta.url)),
+        experience: fileURLToPath(new URL('./experience.html', import.meta.url)),
         skills: fileURLToPath(new URL('./skills.html', import.meta.url)),
       },
     },

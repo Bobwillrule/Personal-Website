@@ -86,10 +86,228 @@
   letter-spacing: 1.2px;
 }
 
-.experience-card-top > svg {
-  width: 22px;
-  height: 22px;
+.experience-page-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: -11px -8px -11px 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
   color: #adc9ed;
+}
+
+.experience-page-link:hover {
+  color: #fff;
+  background: #adc9ed1a;
+  border-color: #adc9ed66;
+}
+
+/* Work index shares the project gallery's paper, type, and navigation. */
+.work-timeline-intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 24px;
+  margin-top: 48px;
+  border-top: 1px solid #dce1e8;
+  color: #58677c;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+}
+
+.work-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.work-timeline-entry {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 48px;
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.work-timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: 251px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #c4d1df;
+}
+
+.work-timeline-entry::after {
+  content: '';
+  position: absolute;
+  left: 246px;
+  top: 35px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #5779a6;
+  box-shadow: 0 0 0 6px var(--paper);
+}
+
+.work-date {
+  padding-top: 31px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.work-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: #58677c;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.work-card {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 44px);
+  border: 1px solid #d9e1e9;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.work-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #506783;
+  margin-bottom: 16px;
+}
+
+.work-index {
+  font: 22px var(--serif);
+}
+
+.work-card h2 {
+  font: clamp(27px, 2.6vw, 40px)/1.15 var(--serif);
+  letter-spacing: -0.5px;
+}
+
+.work-summary {
+  max-width: 650px;
+  color: #58677c;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.work-details {
+  padding-left: 20px;
+  margin: 25px 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.work-details li + li {
+  margin-top: 10px;
+}
+
+.work-details li::marker {
+  color: #5779a6;
+}
+
+.work-card .tags {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.work-card .tags span {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.work-card-featured {
+  background: linear-gradient(125deg, #1a2b40, #263d56);
+  border-color: #304861;
+  color: #f2f5fa;
+}
+
+.work-card-featured .work-card-heading,
+.work-card-featured .work-details li::marker {
+  color: #adc6ff;
+}
+
+.work-card-featured .work-summary {
+  color: #cfdaea;
+}
+
+.work-card-featured .tags span {
+  color: #e0eaff;
+  background: #ffffff0d;
+  border-color: #9cb6d84d;
+}
+
+.work-timeline-outro {
+  margin-left: 278px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.work-timeline-outro .handwritten {
+  font-size: 30px;
+  color: #506783;
+}
+
+@media (max-width: 1000px) {
+  .work-timeline-entry {
+    grid-template-columns: 185px minmax(0, 1fr);
+    gap: 35px;
+  }
+  .work-timeline-entry::before {
+    left: 201px;
+  }
+  .work-timeline-entry::after {
+    left: 196px;
+  }
+  .work-timeline-outro {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-timeline-entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-left: 25px;
+    padding-bottom: 36px;
+  }
+  .work-timeline-entry::before {
+    left: 5px;
+  }
+  .work-timeline-entry::after {
+    left: 0;
+    top: 8px;
+  }
+  .work-date {
+    padding-top: 0;
+  }
+  .work-card {
+    padding: 24px 20px;
+  }
+  .work-summary,
+  .work-details {
+    font-size: 14px;
+  }
+  .work-timeline-outro {
+    margin-left: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .experience-content {
@@ -103,9 +321,28 @@
   line-height: 1.2;
 }
 
-.experience-content .tsmc-mark {
+.tsmc-logo {
+  display: block;
   width: 125px;
-  min-height: 135px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.work-company {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.work-company .tsmc-logo {
+  width: 104px;
+}
+
+.experience-content .tsmc-logo {
+  width: 125px;
+  align-self: start;
+  margin-top: 5px;
 }
 
 .experience-content .wafer-grid {
@@ -234,7 +471,7 @@
     gap: 20px;
   }
 
-  .experience-content .tsmc-mark {
+  .experience-content .tsmc-logo {
     width: 95px;
   }
 
@@ -307,8 +544,9 @@
     margin-top: 18px;
   }
 
-  .experience-content .tsmc-mark {
-    min-height: 105px;
+  .experience-content .tsmc-logo {
+    width: 112px;
+    margin-top: 0;
   }
 
   .experience-content h3 {
