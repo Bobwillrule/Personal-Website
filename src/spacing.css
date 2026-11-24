@@ -554,3 +554,16 @@
     gap: 26px;
   }
 }
+/* Keep the multi-exposure portrait wide enough to read as a single composition. */
+.wrap.journal-portrait {
+  max-width: 760px;
+  margin-block: clamp(28px, 5vw, 68px) 0;
+}
+
+.journal-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px #182b4326;
+}

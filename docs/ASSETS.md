@@ -74,6 +74,12 @@ The new hero uses real HTML for its heading, handwritten annotation, links, and 
 
 **Projects & LeetCode card** (2026-10-05; user-supplied image): `public/images/projects-leetcode.png` is an unchanged 2876 × 1800 copy of the supplied LeetCode screenshot. The site displays it with the journal card's existing responsive crop.
 
+### Homepage theater portrait
+
+The user supplied the multi-exposure theater photo. The built-in image editor retouched it for the homepage journal. The result is saved as `public/images/theater-portrait.jpg` (1593 × 987, 241,741 bytes).
+
+> Use case: identity-preserve. Asset type: landscape personal website photograph. Image 1 is the edit target. Retouch this exact multi-exposure theater portrait with a gentle midtone and shadow lift, subtle neutral color correction, restrained noise reduction, and improved clarity. Keep the dim theater atmosphere and warm seats. Preserve the exact framing, faces, expressions, glasses, hands and heart gesture, hoodie lettering, seat positions, and all translucent overlapping exposures. This is a light photographic correction only. No additions, crop, reframing, smoothing faces, or text overlays.
+
 ## Existing repository assets
 
 The original `Images` directory remains intact. Optimized copies in `public/images` use the existing UBC campus photo, Whistler photo, CAD table image, calculator screenshot, tracker screenshot, and game image. `public/images/game.webp` is the Sewage Search gallery cover; the other software covers use CSS/SVG illustrations. Those illustrations are identified in the project dialogs and make no claim to show measured financial performance.

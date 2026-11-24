@@ -346,6 +346,16 @@ function DayInLife() {
           <span className="sketch-arrow">⤴</span>
         </aside>
       </div>
+      <figure className="wrap journal-portrait">
+        <img
+          src={image('theater-portrait.jpg')}
+          width="1593"
+          height="987"
+          loading="lazy"
+          decoding="async"
+          alt="Layered portraits in theater seats, with a pair of hands forming a heart in the center"
+        />
+      </figure>
     </section>
   );
 }
