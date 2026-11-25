@@ -74,6 +74,8 @@ The new hero uses real HTML for its heading, handwritten annotation, links, and 
 
 **Projects & LeetCode card** (2026-10-05; user-supplied image): `public/images/projects-leetcode.png` is an unchanged 2876 × 1800 copy of the supplied LeetCode screenshot. The site displays it with the journal card's existing responsive crop.
 
+**Gym and Sleep cards** (2026-11-24): `public/images/gym-photo.jpg` (399 × 501) and `public/images/bed-photo.jpg` (720 × 960) are JPEG copies of the user-supplied gym and bed photos. The responsive card crops are positioned toward the equipment and bedding.
+
 ### Homepage theater portrait
 
 The user supplied the multi-exposure theater photo. The built-in image editor retouched it for the homepage journal. The result is saved as `public/images/theater-portrait.jpg` (1593 × 987, 241,741 bytes).

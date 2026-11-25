@@ -12,8 +12,9 @@ export const moments = [
     time: 'Start the day',
     title: 'Wake Up & Gym',
     description: 'Even though I hate waking up and leg day, I still do them anyways.',
-    image: 'gym.jpg',
-    alt: 'Gym shoes, a water bottle, towel, and dumbbells in morning light',
+    image: 'gym-photo.jpg',
+    imagePosition: 'center 80%',
+    alt: 'Rows of weight machines in a gym with tall windows',
   },
   {
     time: 'On campus',
@@ -50,8 +51,9 @@ export const moments = [
     title: 'Sleep',
     description:
       'I value my rest greatly (at least 8 hours), so I am energized to do what I need to do tomorrow.',
-    image: 'sleep.jpg',
-    alt: 'A calm bedroom at night with a warm bedside lamp and city lights',
+    image: 'bed-photo.jpg',
+    imagePosition: 'center 85%',
+    alt: 'A bed with a white pillow, green blanket, and dark wooden headboard',
   },
 ];
 

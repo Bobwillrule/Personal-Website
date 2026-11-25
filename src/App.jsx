@@ -329,6 +329,7 @@ function DayInLife() {
                   height="200"
                   loading="lazy"
                   alt={moment.alt}
+                  style={moment.imagePosition ? { objectPosition: moment.imagePosition } : undefined}
                 />
                 <h3>{moment.title}</h3>
                 <p>{moment.description}</p>
